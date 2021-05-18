@@ -1,0 +1,95 @@
+{% load static %}
+{% load flatpages %}
+{% get_flatpages '/about/' as about_pages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}INLOOP{% endblock %} &ndash; {{ site.name }}</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{% static 'favicons/favicon-192x192.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css/bootstrap-theme.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/inloop.css' %}">
+  {% block extrahead %}{% endblock %}
+</head>
+<body class="{% block body_classes %}{% endblock %}">
+<nav class="navbar navbar-inverse navbar-static-top navigation-bar-inloop">
+  <div class="{% block navbar_container_classes %}container{% endblock  %}">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="{% url 'home' %}">
+        <img class="navbar-brand darken-logo" alt="INLOOP" src="{% static 'img/INLOOP-400px.png' %}">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        {% block navigation %}
+        <li><a href="{% url 'home' %}">Go Back</a></li>
+        {% endblock %}
+      </ul>
+    </div>
+    {% block extranav %}{% endblock %}
+  </div>
+</nav>
+
+<div class="{% block container_classes %}container{% endblock %}">
+{% block messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{ message }}
+</div>
+{% endfor %}
+{% endblock %}
+<div id="notification-hint" class="hidden alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  Browser notifications are currently disabled. If you want to be reminded to submit
+  your solution in time, please click <a href="#" id="notification-request">here</a>.
+</div>
+{% block content %}{% endblock %}
+</div>
+
+{% block footer %}
+<footer class="footer">
+  <div class="container clearfix">
+    <ul class="list-inline footer-left">
+      <li class="text-muted">
+        &copy; {% now "Y" %} <a href="https://github.com/st-tu-dresden/inloop">@st-tu-dresden</a>
+      </li>
+    </ul>
+    <ul class="list-inline footer-right">
+{% for page in about_pages %}
+      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
+    </ul>
+  </div>
+</footer>
+{% endblock  %}
+
+<script src="{% static 'vendor/js/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
+{% if user.is_authenticated %}
+<script src="{% static 'js/notifications.js' %}" type="module"></script>
+{% endif %}
+{% block extrabody %}{% endblock %}
+
+</body>
+</html>

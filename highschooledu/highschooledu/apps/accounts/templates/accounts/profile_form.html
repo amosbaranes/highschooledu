@@ -1,0 +1,30 @@
+{% extends 'base_site.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block messages %}
+{{ block.super }}
+{% for form in forms %}
+  {% include "includes/form_message.html" %}
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="center-box-sm">
+  <h2>Hello, {% firstof user.first_name user.username %}!</h2>
+  <p>You can view and update your profile information here.</p>
+  <form action="{% url 'accounts:profile' %}" method="post" accept-charset="utf-8">
+    {% for form in forms %}
+      {% include "includes/form.html" %}
+    {% endfor %}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" value="submit">
+        Save
+      </button>
+      <a href="{% url 'accounts:password_change' %}" class="btn btn-default">
+        Change password...
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

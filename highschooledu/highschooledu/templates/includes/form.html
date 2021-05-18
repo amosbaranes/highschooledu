@@ -1,0 +1,30 @@
+{% load widget_tweaks %}
+{% csrf_token %}
+{% for field in form %}
+{% spaceless %}
+{% if field|field_type == "booleanfield" %}
+<div class="checkbox{% if field.errors %} has-error{% endif %}">
+  <label>
+    {% render_field field %}
+    {{ field.help_text|safe }}
+  </label>
+</div>
+{% else %}
+<div class="form-group{% if field.errors %} has-error{% endif %}">
+  {{ field.label_tag }}
+  {% if forloop.first %}
+    {% render_field field class="form-control" autofocus="" %}
+  {% else %}
+    {% render_field field class="form-control" %}
+  {% endif %}
+  {% if field.errors|length > 1 %}
+    <div class="help-block">{{ field.errors }}</div>
+  {% elif field.errors %}
+    <div class="help-block">{{ field.errors|first }}</div>
+  {% elif field.help_text %}
+    <div class="help-block">{{ field.help_text|safe }}</div>
+  {% endif %}
+</div>
+{% endif %}
+{% endspaceless %}
+{% endfor %}

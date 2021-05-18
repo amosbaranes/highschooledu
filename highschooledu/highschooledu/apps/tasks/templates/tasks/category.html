@@ -1,0 +1,63 @@
+{% extends 'base_site.html' %}
+{% load static %}
+
+{% block title %}{{ category.name }} tasks{% endblock %}
+
+{% block content %}
+
+<ol class="breadcrumb colorful-nav">
+  <li><a href="{% url 'tasks:index' %}">Tasks</a></li>
+  <li class="active">{{ category.name }}</li>
+</ol>
+
+<h2>{{ category.name }} tasks</h2>
+
+{% if tasks or unpublished_tasks %}
+  <table class="table table-align-pretty">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Publication date</th>
+      {% if have_deadlines %}
+      <th>Deadline</th>
+      {% endif %}
+      {% if show_progress %}
+      <th>Completed</th>
+      {% endif %}
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {% for task in tasks %}
+    <tr id="task-row-{{ forloop.counter }}" class="{% if not task.is_published %}tasks-unpublished{% endif %}">
+      <td>{{ task.title }} [<a href="{% url 'solutions:editor' task.slug %}">open</a> | <a href="{% url 'solutions:list' task.slug %}">my solutions</a>]</td>
+      <td><time {% if not task.is_published %}class="autoreveal" {% endif %}data-autoreveal-id="task-row-{{ forloop.counter }}" datetime="{{ task.pubdate.isoformat }}" title="{{ task.pubdate }}">{{ task.pubdate|date:"d-m-Y H:i" }}</time></td>
+      {% if have_deadlines %}
+      <td>{% if task.deadline %}<time datetime="{{ task.deadline.isoformat }}">{{ task.deadline|date:"d-m-Y H:i" }}</time>{% else %}-{% endif %}</td>
+      {% endif %}
+      {% if show_progress %}
+      <td>
+      {% if task.completed %}
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <span class="sr-only">Yes</span>
+      {% else %}
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <span class="sr-only">No</span>
+      {% endif %}
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+{% else %}
+  <div class="alert alert-info">You are lucky! Nothing to do here.</div>
+{% endif %}
+
+{% endblock %}
+
+{% block extrabody %}
+<script src="{% static 'js/autoreveal.js' %}" type="module"></script>
+{% endblock %}
