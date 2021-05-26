@@ -138,6 +138,10 @@ MIDDLEWARE = [
     'cms.middleware.language.LanguageCookieMiddleware'
 ]
 
+
+LOCAL_APPS = [
+]
+
 INSTALLED_APPS = [
     'djangocms_admin_style',
     'django.contrib.auth',
@@ -178,7 +182,10 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'highschooledu'
-]
+] + LOCAL_APPS
+
+
+
 
 LANGUAGES = (
     ## Customize this
