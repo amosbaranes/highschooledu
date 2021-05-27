@@ -1,4 +1,5 @@
 import os  # isort:skip
+
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -18,7 +19,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -29,24 +29,15 @@ SECRET_KEY = '9-&*@33m%x2you1)li27dq7i$qy+n120(u@yfjyg4&#&(e55u5'
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
-
-
-
 
 
 ROOT_URLCONF = 'highschooledu.urls'
 
-
-
 WSGI_APPLICATION = 'highschooledu.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-
 
 
 # Password validation
@@ -67,7 +58,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -80,7 +70,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -95,11 +84,10 @@ STATICFILES_DIRS = (
 )
 SITE_ID = 1
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'highschooledu', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'highschooledu', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -122,7 +110,6 @@ TEMPLATES = [
     },
 ]
 
-
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,7 +125,6 @@ MIDDLEWARE = [
     'cms.middleware.language.LanguageCookieMiddleware'
 ]
 
-
 LOCAL_APPS = [
     'highschooledu.apps.core',
     'highschooledu.apps.partners',
@@ -148,49 +134,46 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS = [
-    'djangocms_admin_style',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.staticfiles',
-    'django.contrib.messages',
-    'cms',
-    'menus',
-    'sekizai',
-    'treebeard',
-    'djangocms_text_ckeditor',
-    'filer',
-    'easy_thumbnails',
-    'djangocms_bootstrap4',
-    'djangocms_bootstrap4.contrib.bootstrap4_alerts',
-    'djangocms_bootstrap4.contrib.bootstrap4_badge',
-    'djangocms_bootstrap4.contrib.bootstrap4_card',
-    'djangocms_bootstrap4.contrib.bootstrap4_carousel',
-    'djangocms_bootstrap4.contrib.bootstrap4_collapse',
-    'djangocms_bootstrap4.contrib.bootstrap4_content',
-    'djangocms_bootstrap4.contrib.bootstrap4_grid',
-    'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
-    'djangocms_bootstrap4.contrib.bootstrap4_link',
-    'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
-    'djangocms_bootstrap4.contrib.bootstrap4_media',
-    'djangocms_bootstrap4.contrib.bootstrap4_picture',
-    'djangocms_bootstrap4.contrib.bootstrap4_tabs',
-    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
-    'djangocms_file',
-    'djangocms_icon',
-    'djangocms_link',
-    'djangocms_picture',
-    'djangocms_style',
-    'djangocms_googlemap',
-    'djangocms_video',
-    'highschooledu'
-] + LOCAL_APPS
-
-
-
+                     'djangocms_admin_style',
+                     'django.contrib.auth',
+                     'django.contrib.contenttypes',
+                     'django.contrib.sessions',
+                     'django.contrib.admin',
+                     'django.contrib.sites',
+                     'django.contrib.sitemaps',
+                     'django.contrib.staticfiles',
+                     'django.contrib.messages',
+                     'cms',
+                     'menus',
+                     'sekizai',
+                     'treebeard',
+                     'djangocms_text_ckeditor',
+                     'filer',
+                     'easy_thumbnails',
+                     'djangocms_bootstrap4',
+                     'djangocms_bootstrap4.contrib.bootstrap4_alerts',
+                     'djangocms_bootstrap4.contrib.bootstrap4_badge',
+                     'djangocms_bootstrap4.contrib.bootstrap4_card',
+                     'djangocms_bootstrap4.contrib.bootstrap4_carousel',
+                     'djangocms_bootstrap4.contrib.bootstrap4_collapse',
+                     'djangocms_bootstrap4.contrib.bootstrap4_content',
+                     'djangocms_bootstrap4.contrib.bootstrap4_grid',
+                     'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
+                     'djangocms_bootstrap4.contrib.bootstrap4_link',
+                     'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
+                     'djangocms_bootstrap4.contrib.bootstrap4_media',
+                     'djangocms_bootstrap4.contrib.bootstrap4_picture',
+                     'djangocms_bootstrap4.contrib.bootstrap4_tabs',
+                     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+                     'djangocms_file',
+                     'djangocms_icon',
+                     'djangocms_link',
+                     'djangocms_picture',
+                     'djangocms_style',
+                     'djangocms_googlemap',
+                     'djangocms_video',
+                     'highschooledu'
+                 ] + LOCAL_APPS
 
 LANGUAGES = (
     ## Customize this
