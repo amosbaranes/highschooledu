@@ -140,6 +140,11 @@ MIDDLEWARE = [
 
 
 LOCAL_APPS = [
+    'highschooledu.apps.core',
+    'highschooledu.apps.partners',
+    'highschooledu.apps.education',
+    'highschooledu.apps.users',
+    'highschooledu.apps.webcompanies',
 ]
 
 INSTALLED_APPS = [
@@ -241,3 +246,5 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+WEB_SITE_COMPANY_ID = 'WebSiteCompany'

@@ -1,7 +1,6 @@
 from .models import Numbers, Debug
 from datetime import datetime, date
 import calendar
-import pandas as pd
 from dateutil.relativedelta import relativedelta
 
 

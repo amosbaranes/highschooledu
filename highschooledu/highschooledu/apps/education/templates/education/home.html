@@ -1,0 +1,22 @@
+{% extends "base_education.html" %}
+{% load static %}
+
+{% block title %}
+<title>{{ company_obj.company_name }}</title>
+{% endblock%}
+
+
+
+{% block body_content %}
+
+<h1>Education Institution</h1>
+<h1>{{institution_obj.institution_name}}</h1>
+{{institution_obj.phone}}<br/>
+{{institution_obj.email}}<br/>
+
+{% endblock %}
+
+
+  {% block domready %}
+
+  {% endblock %}

@@ -2,7 +2,6 @@ from django import template
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import ugettext_lazy as _, get_language
 
-from ...courses.models import (CourseScheduleUser)
 
 register = template.Library()
 
