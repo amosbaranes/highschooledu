@@ -7,6 +7,7 @@ from ..core.utils import log_debug
 
 class WebSiteCompany(object):
     def __init__(self, request, domain=None):
+        print(1)
         if domain:
             try:
                 # log_debug('WebSiteCompany domain: ' + domain)
@@ -20,7 +21,9 @@ class WebSiteCompany(object):
                                                                  'app_label': app_label_}
             except Exception as ex:
                 request.session[settings.WEB_SITE_COMPANY_ID] = None
+        print(11)
         self.web_site_company = request.session[settings.WEB_SITE_COMPANY_ID]
+        print(settings.WEB_SITE_COMPANY_ID)
 
 
     def is_registered_domain(self):
