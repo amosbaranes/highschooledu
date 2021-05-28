@@ -26,3 +26,6 @@ django-ckeditor==5.7.1
 django-taggit==1.1.0
 django-parler==2.2
 python-dateutil==2.8.0
+elasticsearch
+elasticsearch_dsl
+django-elasticsearch-dsl

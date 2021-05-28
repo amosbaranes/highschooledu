@@ -20,7 +20,7 @@ from ..webcompanies.WebCompanies import WebSiteCompany
 
 
 def home(request):
-    print('-1'*50)
+    # print('-1'*50)
     # log_debug('partners home0: ')
     host = request.META["HTTP_HOST"]
     log_debug('partners host: ' + host)
@@ -37,8 +37,8 @@ def home(request):
         host_ = host_s[0]
     # log_debug('partners host_: ' + host_)
 
-    print('-2'*50)
-    print('partners host_: ' + host_)
+    # print('-2'*50)
+    # print('partners host_: ' + host_)
 
     try:
         log_debug('try1: ' + host_)

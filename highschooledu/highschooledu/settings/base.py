@@ -1,7 +1,7 @@
 import os  # isort:skip
 
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 """
 Django settings for highschooledu project.
 
@@ -79,16 +79,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'highschooledu', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'highschooledu', 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -132,6 +131,8 @@ LOCAL_APPS = [
     'highschooledu.apps.education',
     'highschooledu.apps.users',
     'highschooledu.apps.webcompanies',
+    'highschooledu.apps.search',
+    'django_elasticsearch_dsl',
 ]
 
 INSTALLED_APPS = [
@@ -173,7 +174,6 @@ INSTALLED_APPS = [
                      'djangocms_style',
                      'djangocms_googlemap',
                      'djangocms_video',
-                     'highschooledu'
                  ] + LOCAL_APPS
 
 LANGUAGES = (
@@ -232,3 +232,11 @@ THUMBNAIL_PROCESSORS = (
 )
 
 WEB_SITE_COMPANY_ID = 'WebSiteCompany'
+
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
+

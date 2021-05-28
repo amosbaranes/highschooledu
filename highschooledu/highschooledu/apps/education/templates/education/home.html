@@ -6,7 +6,6 @@
 {% endblock%}
 
 {% block meta %}
-  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="index,follow,all">
   <meta name="msapplication-TileColor" content="#eceff1">
   <meta name="msapplication-config" content="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/browserconfig.fd69d581fd96.xml">
@@ -116,59 +115,11 @@
 </svg>
 
 <div id="modal-exclude">
-    <nav class="topbar topbar--over" id="main-menu">
-        <div class="topbar__container">
-            <div class="topbar__brand">
-                <button class="topbar__hamburger" data-target="main-menu" aria-label="menu" aria-expanded="false">&#8801;</button>
-                <a href="/">
-                    <img src="//dpaz9rouqy0e2.cloudfront.net/static/richie/images/logo.bc96dea393cb.png" class="topbar__logo" alt="Richie demonstration">
-                </a>
-            </div>
-            <div class="topbar__menu">
-                <ul class="topbar__list">
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/news/">News</a></li>
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/courses/">Courses</a></li>
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/categories/">Categories</a></li>
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/organizations/">Organizations</a></li>
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/persons/">Persons</a></li>
-                    <li class="topbar__item topbar__item--sibling"><a href="/en/programs/">Programs</a></li>
-                </ul>
-            </div>
-            <div class="topbar__menu topbar__menu--aside">
-                <ul class="topbar__list topbar__list--controls">
-                    <li class="topbar__item topbar__item--login richie-react richie-react--user-login" data-props='{"profileUrls": {&quot;dashboard&quot;: {&quot;label&quot;: &quot;Dashboard&quot;, &quot;action&quot;: &quot;https://edx.richie.education/dashboard&quot;}, &quot;profile&quot;: {&quot;label&quot;: &quot;Profile&quot;, &quot;action&quot;: &quot;https://edx.richie.education/u/(username)&quot;}, &quot;account&quot;: {&quot;label&quot;: &quot;Account&quot;, &quot;action&quot;: &quot;https://edx.richie.education/account/settings&quot;}}}'></li>
-                    <li class="topbar__item topbar__item--cta"><a href="#">Contact us</a></li>
-                </ul>
-                <script data-language-selector type="application/json">
-  {
-    "currentLanguage": "en",
-    "languages": {
-
-      "en": {
-        "code": "en",
-        "name": "English",
-        "url": "/en/"
-
-      },
 
 
-      "fr": {
-        "code": "fr",
-        "name": "French",
-        "url": "/fr/"
-
-      }
-
-
-    }
-  }
-  </script>
-                <div class="richie-react richie-react--language-selector" data-props-source="[data-language-selector]"></div>
-            </div>
-        </div>
-    </nav>
     <div class="body-content">
         <div class="homepage">
+
             <div class="hero-intro" style="background-image: url('https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e5/d4/e5d47a34-843b-4746-9995-04ea702690c8/banner4.jpg__1400x800_q85_crop-%2C0_subsampling-2.jpg');">
                 <div class="hero-intro__inner">
                     <div class="hero-intro__body">
@@ -176,183 +127,40 @@
                             <h1 class="hero-intro__title">Welcome <strong>to Richie</strong></h1>
                             <p>It works! This is the default homepage for the Richie CMS.</p>
                         </div>
+
                         <div class="hero-intro__search">
                             <p class="hero-intro__search-title">Search in our courses</p>
-                            <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'></div>
+                            <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'>
+                                <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
+                                <div class="search-input">
+                                    <input id="search_input" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1"
+                                           class="react-autosuggest__input" placeholder="Search for courses" value="">
+                                    <button class="search-input__btn"
+                                        onclick="search(event)">
+                                        <svg aria-hidden="true" role="img" class="icon search-input__btn__icon"><use xlink:href="#icon-magnifying-glass"></use></svg>
+                                        <span class="offscreen">Search</span>
+                                    </button>
+                                </div>
+                                    <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container">
+                                    </div>
+                                </div>
+                            </div>
                             <a class="hero-intro__cta" href="/en/courses/">Explore our catalog</a>
                         </div>
+
+
                     </div>
                 </div>
             </div>
+
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Popular courses</h2>
-                    <div class="section__items">
-                        <a class="course-glimpse" href="/en/courses/business-focused-intangible-benchmark/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4d/f1/4df1b186-45ad-4c9a-9755-b9b5f5172825/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4d/f1/4df1b186-45ad-4c9a-9755-b9b5f5172825/cover1.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Business-focused intangible benchmark</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Persevering didactic throughput</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        July 18, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/compatible-secondary-methodology/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/21/19/2119e43a-7d10-4904-8bf3-df2c27552d14/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/21/19/2119e43a-7d10-4904-8bf3-df2c27552d14/cover1.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__icon">
-                                    <span class="category-badge">
-                                        <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__40x40_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__40x40_q85_crop_subsampling-2_upscale.png 40w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__80x80_q85_crop_subsampling-2_upscale.png 80w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__120x120_q85_crop_subsampling-2_upscale.png 120w" sizes="40px" class="category-badge__icon" alt="Academic">
-                                        <span class="category-badge__title">Academic</span>
-                                    </span>
-                                </div>
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Compatible secondary methodology</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Fundamental human-resource frame</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        July 4, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/re-engineered-secondary-structure/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/8c/6a/8c6aadea-62f3-48b2-9ce3-b8979a4c2aee/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/8c/6a/8c6aadea-62f3-48b2-9ce3-b8979a4c2aee/cover3.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__icon">
-                                    <span class="category-badge">
-                                        <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/59/4a597837-a729-4f5e-8642-4dc788b284e7/cc.png__40x40_q85_crop_subsampling-2_upscale.png" srcset=" https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/59/4a597837-a729-4f5e-8642-4dc788b284e7/cc.png__40x40_q85_crop_subsampling-2_upscale.png 40w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/59/4a597837-a729-4f5e-8642-4dc788b284e7/cc.png__80x80_q85_crop_subsampling-2_upscale.png 80w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/59/4a597837-a729-4f5e-8642-4dc788b284e7/cc.png__120x120_q85_crop_subsampling-2_upscale.png 120w"sizes="40px" class="category-badge__icon" alt="Closed caption">
-                                        <span class="category-badge__title">Closed caption</span>
-                                    </span>
-                                </div>
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Re-engineered secondary structure</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Programmable value-added customer loyalty</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        July 18, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/cross-group-bottom-line-local-area-network/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/a0/e5/a0e546c6-3f50-4ad1-9e4e-78d1a7818c57/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/a0/e5/a0e546c6-3f50-4ad1-9e4e-78d1a7818c57/cover3.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Cross-group bottom-line Local Area Network</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Front-line discrete matrix</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        Oct. 16, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/multi-layered-optimal-groupware/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/be/a6/bea6f324-6ebe-4197-aeec-13cb794d0c19/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/be/a6/bea6f324-6ebe-4197-aeec-13cb794d0c19/cover1.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Multi-layered optimal groupware</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Open-architected 6thgeneration secured line</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Archived
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/switchable-disintermediate-software/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e4/f2/e4f26ddc-375a-4047-b5a8-c8eae49ccef7/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e4/f2/e4f26ddc-375a-4047-b5a8-c8eae49ccef7/cover1.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Switchable disintermediate software</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Realigned coherent frame</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        Dec. 11, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="course-glimpse" href="/en/courses/digitized-247-process-improvement/">
-                            <div class="course-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f7/92/f792ee69-9e2f-4e26-9bf0-0934297e276e/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f7/92/f792ee69-9e2f-4e26-9bf0-0934297e276e/cover3.jpg__800x457_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="course-glimpse__content">
-                                <div class="course-glimpse__icon">
-                                    <span class="category-badge">
-                                        <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__40x40_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__40x40_q85_crop_subsampling-2_upscale.png 40w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__80x80_q85_crop_subsampling-2_upscale.png 80w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/35/e0/35e041f0-507a-4b33-8578-a6d2657a13fa/academic.png__120x120_q85_crop_subsampling-2_upscale.png 120" sizes="40px" class="category-badge__icon" alt="Academic">
-                                        <span class="category-badge__title">Academic</span>
-                                    </span>
-                                </div>
-                                <div class="course-glimpse__wrapper">
-                                    <p class="course-glimpse__title">Digitized 24/7 process improvement</p>
-                                    <div class="course-glimpse__organization">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-pin" /></svg>
-                                        <span>Business-focused upward-trending firmware</span>
-                                    </div>
-                                </div>
-                                <div class="course-glimpse-footer">
-                                    <div class="course-glimpse-footer__date">
-                                        <svg role="img" aria-hidden="true" class="icon"><use href="#icon-calendar" /></svg>
-                                        Starting on
-                                        June 11, 2021
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="button-caesura">
+                    <div id="courses_" class="section__items">
+
+
+
+                        <div id="more_courses_btn" class="button-caesura">
                             <a href="/en/courses/">More courses</a>
                         </div>
                     </div>
@@ -846,85 +654,14 @@
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
     </div>
-    <div class="body-footer">
-        <div class="body-footer__container">
-            <div class="body-footer__menu">
-                <p class="body-footer__subtitle">Learn more</p>
-                <div class="body-footer__items">
-                    <a href="//localhost:8080/en/annex/about/">About</a>
-                    <a href="//localhost:8080/en/annex/sitemap/">Sitemap</a>
-                    <a href="/styleguide/">Style guide</a>
-                    <div class="nested-item nested-item--list nested-item--0">
-                        <div class="nested-item__content">Richie community</div>
-                        <ul class="nested-item__items">
-                            <li><a href="https://richie.education">Website</a></li>
-                            <li><a href="https://github.com/openfun/richie">Github</a></li>
-                            <li><a href="https://github.com/openfun/richie-site-factory">Site factory</a></li>
-                            <li><a href="https://www.fun-campus.fr">Example site</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="body-footer__brand">
-                <a href="/"><img src="//dpaz9rouqy0e2.cloudfront.net/static/richie/images/logo-alt.fc0399d9114f.png" alt=""></a>
-            </div>
-            <div class="body-footer__insert">
-                <p class="body-footer__title">Life-changing learning!</p>
-                <script data-language-selector type="application/json">
-  {
-    "currentLanguage": "en",
-    "languages": {
-
-      "en": {
-        "code": "en",
-        "name": "English",
-        "url": "/en/"
-
-      },
 
 
-      "fr": {
-        "code": "fr",
-        "name": "French",
-        "url": "/fr/"
-
-      }
-
-
-    }
-  }
-  </script>
-                <div class="richie-react richie-react--language-selector" data-props-source="[data-language-selector]"></div>
-                <div class="body-footer__badges">
-                    <a href="https://www.facebook.com/example" class="body-footer__badge" target="_blank">
-                        <svg role="img"><title>Facebook</title><use href="#icon-facebook" /></svg>
-                    </a>
-                    <a href="https://twitter.com/@funmooc" class="body-footer__badge" target="_blank" title="Twitter page">
-                        <svg role="img"><title>Twitter</title><use href="#icon-twitter" /></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/school/franceuniversitenumerique/" class="body-footer__badge" target="_blank" title="Linkedin">
-                        <svg role="img"><title>Linkedin</title><use href="#icon-linkedin" /></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="body-mentions">
-        <div class="body-mentions__container">
-            <div class="body-mentions__poweredby">
-                <a href="https://richie.education">
-                    <small>Powered by</small>
-                    <strong>Richie</strong>
-                </a>
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock %}
-
 
   {% block js %}
         <script>
@@ -932,6 +669,27 @@
         </script>
         <script src="{% static 'js/index.dc82dfe6f1fc.js' %}"></script>
         <script>
+
+            function search(event)
+            {
+
+              elm = document.getElementById("search_input")
+              alert(elm.value)
+
+              var value = elm.value
+                try{
+                    $.post('{% url "search:search" %}',
+                      {
+                        q: value
+                      },
+                      function(data){
+                          alert(data['status'])
+                      });
+                  } catch(er){alert(er)}
+            }
+
+
+
             function initializeHamburgerMenu() {
                 // Get all topbar burger elements
                 const topbarBurgers = Array.prototype.slice.call(
@@ -977,5 +735,89 @@
   {% endblock %}
 
   {% block domready %}
+
+
+        function make_course_template(course)
+        {
+            var a_ = document.createElement("a")
+            a_.setAttribute("class", "course-glimpse")
+            a_.setAttribute("href", "/en/courses/business-focused-intangible-benchmark/");
+            var div_ = document.createElement("div")
+            a_.appendChild(div_)
+            div_.setAttribute("class", "course-glimpse__media")
+            var img_ = document.createElement("img")
+            div_.appendChild(img_)
+            img_.setAttribute("src", course['image_url'])
+            img_.setAttribute("srcset", course['image_url'] + " 300w")
+            img_.setAttribute("sizes", "300px")
+            img_.setAttribute("alt", "")
+
+            var div1_ = document.createElement("div")
+            a_.appendChild(div1_)
+            div1_.setAttribute("class", "course-glimpse__content")
+            var div11_ = document.createElement("div")
+            div1_.appendChild(div11_)
+            div11_.setAttribute("class", "course-glimpse__wrapper")
+            var p_ = document.createElement("p")
+            div11_.appendChild(p_)
+            p_.setAttribute("class", "course-glimpse__title")
+            p_.innerHTML = course['course_name'];
+
+            var div111_ = document.createElement("div")
+            div11_.appendChild(div111_)
+            div111_.setAttribute("class", "course-glimpse__organization")
+            var svg_ = document.createElement("svg")
+            div111_.appendChild(svg_)
+            div111_.setAttribute("role", "img")
+            div111_.setAttribute("aria-hidden", "true")
+            div111_.setAttribute("class", "icon")
+            var use_ = document.createElement("use")
+            svg_.appendChild(use_)
+            use_.setAttribute("href", "#icon-pin")
+            var span_ = document.createElement("span")
+            div111_.appendChild(span_)
+            span_.innerHTML = course['course_description']
+            var div12_ = document.createElement("div")
+            div1_.appendChild(div12_)
+            div12_.setAttribute("class", "course-glimpse-footer")
+            var div121_ = document.createElement("div")
+            div12_.appendChild(div121_)
+            div121_.setAttribute("class", "course-glimpse-footer__date")
+            var svg1_ = document.createElement("svg")
+            div121_.appendChild(svg1_)
+            svg1_.setAttribute("role", "img")
+            svg1_.setAttribute("aria-hidden", "true")
+            svg1_.setAttribute("class", "icon")
+            var use1_ = document.createElement("use")
+            svg1_.appendChild(use1_)
+            use1_.setAttribute("href", "#icon-calendar")
+            div121_.innerHTML += course['course_date'];
+            return a_
+        }
+
+            function get_courses()
+            {
+              //elm = document.getElementById("search_input")
+              //alert(elm.value)
+
+              //var value = elm.value
+                try{
+                    $.post('{% url "education:get_courses" %}',
+                      {
+                      },
+                      function(data){
+                        for (k in data)
+                        {
+                            course_elm = make_course_template(data[k])
+                            var courses_elm = document.getElementById("courses_")
+                            //alert(course_elm.outerHTML)
+                            var more_courses_btn = document.getElementById("more_courses_btn")
+                            courses_elm.insertBefore(course_elm, more_courses_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_courses()
 
   {% endblock %}

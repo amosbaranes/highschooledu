@@ -24,3 +24,18 @@ class InstitutionWeb(models.Model):
     def __str__(self):
         return self.institution_name
 
+
+class Course(models.Model):
+
+    class Meta:
+        verbose_name = _('course')
+        verbose_name_plural = _('courses')
+        ordering = ['order']
+
+    order = models.IntegerField(default=1000, blank=True)
+    course_name = models.CharField(max_length=100, null=True)
+    course_description = models.CharField(max_length=200, null=True)
+    course_date = models.DateField(blank=True, null=True)
+    image = models.ImageField(upload_to='courses/', blank=True, null=True)
+    is_popular = models.BooleanField(default=True)
+
