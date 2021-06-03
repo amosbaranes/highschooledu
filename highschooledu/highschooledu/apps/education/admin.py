@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import InstitutionWeb, Course
+from .models import InstitutionWeb, Course, New, Program, Subject, Person
 
 
 @admin.register(InstitutionWeb)
@@ -9,6 +9,30 @@ class InstitutionWebAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'order', 'course_name', 'course_date', 'is_popular', )
+    list_display = ('id', 'order', 'course_name', 'course_date', 'is_popular', 'is_active', )
+    list_filter = ('is_active', 'is_popular', )
 
+
+@admin.register(New)
+class NewAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'news_title', 'news_description', 'news_date', 'is_popular', 'is_active')
+    list_filter = ('is_active', 'is_popular', )
+
+
+@admin.register(Program)
+class ProgramAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'program_title', 'program_description', 'is_popular', )
+    list_filter = ('is_active', 'is_popular', )
+
+
+@admin.register(Subject)
+class SubjectAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'subject_name', 'is_popular', 'is_active',)
+    list_filter = ('is_active', 'is_popular', )
+
+
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'persons_name', 'persons_description', 'is_popular', 'is_active',)
+    list_filter = ('is_active', 'is_popular', )
 

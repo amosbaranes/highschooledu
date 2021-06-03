@@ -17,13 +17,12 @@
 {% endblock %}
 
 {% block links %}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.a399bc1a5519.css' %}">
-  <link rel="apple-touch-icon" sizes="120x120" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/apple-touch-icon.e3f5be308427.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/favicon-32x32.b0adf6b91841.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/favicon-16x16.bd459d491a1e.png">
-  <link rel="manifest" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/site.57775445aa3a.webmanifest">
-  <link rel="mask-icon" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/safari-pinned-tab.00983a824cb5.svg" color="#f72c30">
-  <link rel="shortcut icon" href="//dpaz9rouqy0e2.cloudfront.net/static/richie/favicon/favicon.bc906d84c4a9.ico">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/apple-touch-icon.e3f5be308427.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.b0adf6b91841.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.bd459d491a1e.png' %}">
+  <link rel="manifest" href="{% static 'images/site.57775445aa3a.webmanifest' %}">
+  <link rel="mask-icon" href="{% static 'images/safari-pinned-tab.00983a824cb5.svg' %}" color="#f72c30">
+  <link rel="shortcut icon" href="{% static 'images/favicon.bc906d84c4a9.ico' %}">
 {% endblock %}
 
 {% block body_content %}
@@ -116,15 +115,16 @@
 
 <div id="modal-exclude">
 
-
     <div class="body-content">
         <div class="homepage">
 
-            <div class="hero-intro" style="background-image: url('https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e5/d4/e5d47a34-843b-4746-9995-04ea702690c8/banner4.jpg__1400x800_q85_crop-%2C0_subsampling-2.jpg');">
+            <div class="hero-intro" style="background-image: url('/static/images/WhatsApp Image 2021-06-01 at 3.37.10 PM.jpeg');">
                 <div class="hero-intro__inner">
                     <div class="hero-intro__body">
                         <div class="hero-intro__content">
-                            <h1 class="hero-intro__title">Welcome <strong>to Richie</strong></h1>
+                            <h1 class="hero-intro__title">
+                                Welcome <strong>to {{institution_obj.institution_name}}</strong>
+                            </h1>
                             <p>It works! This is the default homepage for the Richie CMS.</p>
                         </div>
 
@@ -169,409 +169,60 @@
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Last news</h2>
-                    <div class="section__items">
-                        <a href="/en/news/triple-buffered-value-added-attitude/" class="blogpost-glimpse">
-                            <p class="blogpost-glimpse__date">May 27, 2021</p>
-                            <div class="blogpost-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/6b/66/6b667f29-c43a-437e-a1be-121cd9879f9e/cover5.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/6b/66/6b667f29-c43a-437e-a1be-121cd9879f9e/cover5.jpg__800x480_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt="">
-                            </div>
-                            <div class="blogpost-glimpse__content">
-                                <div class="blogpost-glimpse__wrapper">
-                                    <div class="blogpost-glimpse__categories">
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Expert</span>
-                                        </span>
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Feature</span>
-                                        </span>
-                                    </div>
-                                    <p class="blogpost-glimpse__title">Triple-buffered value-added attitude</p>
-                                    <p class="blogpost-glimpse__excerpt">
-                                        Fly media white third also first population. Perhaps music case. Which across might seven pass.
-                                        Learn dinner attack. Assume strong person agree finish long Congress.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/news/re-contextualized-uniform-infrastructure/" class="blogpost-glimpse">
-                            <p class="blogpost-glimpse__date">May 27, 2021</p>
-                            <div class="blogpost-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/bb/99/bb991f78-4c8f-4b93-8c3e-bbdf5df616b8/cover7.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/bb/99/bb991f78-4c8f-4b93-8c3e-bbdf5df616b8/cover7.jpg__800x480_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt="">
-                            </div>
-                            <div class="blogpost-glimpse__content">
-                                <div class="blogpost-glimpse__wrapper">
-                                    <div class="blogpost-glimpse__categories">
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Advanced</span>
-                                        </span>
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Partner</span>
-                                        </span>
-                                    </div>
-                                    <p class="blogpost-glimpse__title">Re-contextualized uniform infrastructure</p>
-                                    <p class="blogpost-glimpse__excerpt">
-                                        Share race third agree. Skin church they.
-                                        Protect major inside. Most go couple check.
-                                        Speak politics other dark key agency author. Happen discuss shoulder would way. Strategy anyone pay but factor.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/news/open-source-context-sensitive-middleware/" class="blogpost-glimpse">
-                            <p class="blogpost-glimpse__date">May 27, 2021</p>
-                            <div class="blogpost-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/86/c7/86c7b07d-1ecd-4c79-88d3-1f1f47e170b9/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/86/c7/86c7b07d-1ecd-4c79-88d3-1f1f47e170b9/cover3.jpg__800x480_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt="">
-                            </div>
-                            <div class="blogpost-glimpse__content">
-                                <div class="blogpost-glimpse__wrapper">
-                                    <div class="blogpost-glimpse__categories">
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Expert</span>
-                                        </span>
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Event</span>
-                                        </span>
-                                    </div>
-                                    <p class="blogpost-glimpse__title">Open-source context-sensitive middleware</p>
-                                    <p class="blogpost-glimpse__excerpt">
-                                        Score often study score book me natural. Space manager billion training live fall animal.
-                                        Ahead nice guy. Stop seat sell oil outside deal since occur.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/news/synchronized-solution-oriented-productivity/" class="blogpost-glimpse">
-                            <p class="blogpost-glimpse__date">May 27, 2021</p>
-                            <div class="blogpost-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/78/86/7886884c-a4e6-40e9-b5a9-6a56e1e4235f/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/78/86/7886884c-a4e6-40e9-b5a9-6a56e1e4235f/cover3.jpg__800x480_q85_crop_subsampling-2_upscale.jpg 300w" sizes="300px" alt="">
-                            </div>
-                            <div class="blogpost-glimpse__content">
-                                <div class="blogpost-glimpse__wrapper">
-                                    <div class="blogpost-glimpse__categories">
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Advanced</span>
-                                        </span>
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Feature</span>
-                                        </span>
-                                    </div>
-                                    <p class="blogpost-glimpse__title">Synchronized solution-oriented productivity</p>
-                                    <p class="blogpost-glimpse__excerpt">
-                                        Study possible sport community. Run fight ago center operation itself.
-                                        Require and ground discussion room. Southern back feel first.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/news/expanded-well-modulated-migration/" class="blogpost-glimpse">
-                            <p class="blogpost-glimpse__date">May 27, 2021</p>
-                            <div class="blogpost-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e2/d0/e2d08a12-b495-41fe-9e36-ad5b1cd7886e/cover4.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e2/d0/e2d08a12-b495-41fe-9e36-ad5b1cd7886e/cover4.jpg__800x480_q85_crop_subsampling-2_upscale.jpg 300w"sizes="300px" alt="">
-                            </div>
-                            <div class="blogpost-glimpse__content">
-                                <div class="blogpost-glimpse__wrapper">
-                                    <div class="blogpost-glimpse__categories">
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Beginner</span>
-                                        </span>
-                                        <span class="category-tag">
-                                            <span class="category-tag__title">Feature</span>
-                                        </span>
-                                    </div>
-                                    <p class="blogpost-glimpse__title">Expanded well-modulated migration</p>
-                                    <p class="blogpost-glimpse__excerpt">
-                                        Only head serious party control. Beat structure between floor.
-                                        Idea year across realize everything family.
-                                        Page structure prove Mr seat control force. Number minute art film factor or.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="button-caesura">
+                    <div id="news_" class="section__items">
+
+
+
+                        <div id="more_news_btn" class="button-caesura">
                             <a href="/en/news/">More news</a>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Programs</h2>
-                    <div class="section__items">
-                        <a href="/en/programs/synergistic-systemic-website/" class="program-glimpse program-glimpse--link" >
-                            <div class="program-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e1/c4/e1c4b520-ca65-405a-b3a8-eddee1990c18/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e1/c4/e1c4b520-ca65-405a-b3a8-eddee1990c18/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e1/c4/e1c4b520-ca65-405a-b3a8-eddee1990c18/cover3.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="program-glimpse__content">
-                                <div class="program-glimpse__wrapper">
-                                    <p class="program-glimpse__title">Synergistic systemic website</p>
-                                    <p>
-                                        Note friend name magazine general continue. Eye until local offer. South lay case price least under often.
-                                        Radio Mr rate. Break investment challenge maybe develop. City she above public.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/programs/business-focused-static-benchmark/" class="program-glimpse program-glimpse--link" >
-                            <div class="program-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/84/4e/844e1a62-6b07-480d-9119-69c903868445/cover5.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/84/4e/844e1a62-6b07-480d-9119-69c903868445/cover5.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/84/4e/844e1a62-6b07-480d-9119-69c903868445/cover5.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="program-glimpse__content">
-                                <div class="program-glimpse__wrapper">
-                                    <p class="program-glimpse__title">Business-focused static benchmark</p>
-                                    <p>
-                                        Myself benefit whole finally sometimes. Hair might cold back ok board raise. Expect provide support store whether. Medical new heavy strong identify kitchen.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/programs/operative-bandwidth-monitored-projection/" class="program-glimpse program-glimpse--link" >
-                            <div class="program-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/54/f7/54f76634-8527-4095-9741-510707ef9801/cover6.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/54/f7/54f76634-8527-4095-9741-510707ef9801/cover6.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/54/f7/54f76634-8527-4095-9741-510707ef9801/cover6.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt=""/>
-                            </div>
-                            <div class="program-glimpse__content">
-                                <div class="program-glimpse__wrapper"><p class="program-glimpse__title">Operative bandwidth-monitored projection</p>
-                                    <p>
-                                        Challenge back character. Threat resource establish recent Congress firm.
-                                        Government know most rate. Collection do by number win in prove.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/en/programs/enterprise-wide-mission-critical-framework/" class="program-glimpse program-glimpse--link" >
-                            <div class="program-glimpse__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/ee/ca/eecaf882-0f2e-485c-b2f3-b54238702e0b/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/ee/ca/eecaf882-0f2e-485c-b2f3-b54238702e0b/cover1.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/ee/ca/eecaf882-0f2e-485c-b2f3-b54238702e0b/cover1.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w"sizes="300px" alt=""/>
-                            </div>
-                            <div class="program-glimpse__content">
-                                <div class="program-glimpse__wrapper">
-                                    <p class="program-glimpse__title">Enterprise-wide mission-critical framework</p>
-                                    <p>
-                                        Source find also public quite civil station executive. Place painting put fast fear sister. Glass would rest recently hope view.
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="button-caesura">
+                    <div id="program_" class="section__items">
+
+                        <div id="more_program_btn" class="button-caesura">
                             <a href="/en/programs/">More programs</a>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="section ">
-                <div class="section__row">
-                    <h2 class="section__title">Universities</h2>
-                    <div class="section__items">
-                        <a class="organization-glimpse" href="/en/organizations/open-architected-6thgeneration-secured-line/" title="Open-architected 6thgeneration secured line">
-                            <div class="organization-glimpse__logo">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e4/b9/e4b9d69f-a200-4f88-922e-252e08c45093/logo5.png__200x113_q85_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/e4/b9/e4b9d69f-a200-4f88-922e-252e08c45093/logo5.png__200x113_q85_subsampling-2_upscale.jpg 200w" sizes="(min-width: 576px) 50vw, (min-width: 1200px) 25vw, 100vw" alt=""/>
-                            </div>
-                            <div class="organization-glimpse__content">
-                                <div class="organization-glimpse__title">
-                                    Open-architected 6thgeneration secured line
-                                </div>
-                            </div>
-                        </a>
-                        <a class="organization-glimpse" href="/en/organizations/realigned-coherent-frame/" title="Realigned coherent frame">
-                            <div class="organization-glimpse__logo">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/8d/d2/8dd21590-e335-4ec3-b28a-37f75736f7d4/logo7.png__200x113_q85_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/8d/d2/8dd21590-e335-4ec3-b28a-37f75736f7d4/logo7.png__200x113_q85_subsampling-2_upscale.jpg 200w" sizes="(min-width: 576px) 50vw, (min-width: 1200px) 25vw, 100vw" alt=""/>
-                            </div>
-                            <div class="organization-glimpse__content">
-                                <div class="organization-glimpse__title">
-                                    Realigned coherent frame
-                                </div>
-                            </div>
-                        </a>
-                        <a class="organization-glimpse" href="/en/organizations/exclusive-upward-trending-hierarchy/" title="Exclusive upward-trending hierarchy">
-                            <div class="organization-glimpse__logo">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/2a/89/2a8945b0-1082-4015-aa6e-31a9e48612e9/logo6.png__200x113_q85_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/2a/89/2a8945b0-1082-4015-aa6e-31a9e48612e9/logo6.png__200x113_q85_subsampling-2_upscale.jpg 200w" sizes="(min-width: 576px) 50vw, (min-width: 1200px) 25vw, 100vw" alt=""/>
-                            </div>
-                            <div class="organization-glimpse__content">
-                                <div class="organization-glimpse__title">
-                                    Exclusive upward-trending hierarchy
-                                </div>
-                            </div>
-                        </a>
-                        <a class="organization-glimpse" href="/en/organizations/reverse-engineered-systematic-framework/" title="Reverse-engineered systematic framework">
-                            <div class="organization-glimpse__logo">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/d6/3e/d63e1b50-2d6f-435a-b0e8-109e27bd0ecf/logo2.png__200x113_q85_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/d6/3e/d63e1b50-2d6f-435a-b0e8-109e27bd0ecf/logo2.png__200x113_q85_subsampling-2_upscale.jpg 200w" sizes="(min-width: 576px) 50vw, (min-width: 1200px) 25vw, 100vw" alt=""/>
-                            </div>
-                            <div class="organization-glimpse__content">
-                                <div class="organization-glimpse__title">
-                                    Reverse-engineered systematic framework
-                                </div>
-                            </div>
-                        </a>
-                        <div class="button-caesura">
-                            <a href="/en/organizations/">More universities</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
+
+
+
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Subjects</h2>
-                    <div class="section__items">
-                        <a class="category-glimpse" href="/en/categories/subject/science/chemistry/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/01/4a01b785-686a-4ab7-ad6e-12980edf87bb/logo2.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/4a/01/4a01b785-686a-4ab7-ad6e-12980edf87bb/logo2.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Chemistry">
-                                </div>
-                                <h3 class="category-glimpse__title">Chemistry</h3>
-                            </div>
-                        </a>
-                        <a class="category-glimpse" href="/en/categories/subject/human-and-social-sciences/sports/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/33/09/33096122-fa52-47fe-8850-3d9f50e4c796/logo5.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/33/09/33096122-fa52-47fe-8850-3d9f50e4c796/logo5.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Sports">
-                                </div>
-                                <h3 class="category-glimpse__title">Sports</h3>
-                            </div>
-                        </a>
-                        <a class="category-glimpse" href="/en/categories/subject/human-and-social-sciences/geography/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/16/37/1637e8a0-5dd7-45cf-ba45-a1edb5a4a0a6/logo3.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/16/37/1637e8a0-5dd7-45cf-ba45-a1edb5a4a0a6/logo3.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Geography">
-                                </div>
-                                <h3 class="category-glimpse__title">Geography</h3>
-                            </div>
-                        </a>
-                        <a class="category-glimpse" href="/en/categories/subject/science/discovery-of-the-universe/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/45/59/4559606f-ad83-4563-a0b2-a019862e4cb3/logo10.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/45/59/4559606f-ad83-4563-a0b2-a019862e4cb3/logo10.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Discovery of the Universe">
-                                </div>
-                                <h3 class="category-glimpse__title">Discovery of the Universe</h3>
-                            </div>
-                        </a>
-                        <a class="category-glimpse" href="/en/categories/subject/human-and-social-sciences/creation-arts-and-design/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f1/b3/f1b3a63c-b8a9-4b98-bf10-920f6a05d3eb/logo5.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f1/b3/f1b3a63c-b8a9-4b98-bf10-920f6a05d3eb/logo5.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Creation, Arts and Design">
-                                </div>
-                                <h3 class="category-glimpse__title">Creation, Arts and Design</h3>
-                            </div>
-                        </a>
-                        <a class="category-glimpse" href="/en/categories/subject/science/physics/">
-                            <div class="category-glimpse__body">
-                                <div class="category-glimpse__logo">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/31/cf/31cf941f-f714-47fb-b445-1c5b1bf5b389/logo14.png__200x200_q85_crop_subsampling-2_upscale.png" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/31/cf/31cf941f-f714-47fb-b445-1c5b1bf5b389/logo14.png__200x200_q85_crop_subsampling-2_upscale.png 200w" sizes="200px" alt="Physics">
-                                </div>
-                                <h3 class="category-glimpse__title">Physics</h3>
-                            </div>
-                        </a>
-                        <div class="button-caesura">
+                    <div id="subject_" class="section__items">
+
+                        <div id="more_subject_btn" class="button-caesura">
                             <a href="/en/categories/">More subjects</a>
                         </div>
                     </div>
                 </div>
             </section>
+
+
+
+
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Persons</h2>
-                    <div class="section__items">
-                        <div class="person-glimpse">
-                            <a class="person-glimpse__media" href="/en/persons/dr-diane-baker/" tabindex="-1" aria-hidden="true">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/6c/93/6c93aa9f-f27a-4ed6-a2f6-fbb802a1fb79/portrait-3.png__200x200_q85_crop_subsampling-2_upscale.jpg"srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/6c/93/6c93aa9f-f27a-4ed6-a2f6-fbb802a1fb79/portrait-3.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt=""/>
-                            </a>
-                            <div class="person-glimpse__content">
-                                <div class="person-glimpse__wrapper">
-                                    <a href="/en/persons/dr-diane-baker/">
-                                        <h3 class="person-glimpse__title">Dr. Diane Baker</h3>
-                                    </a>
-                                    <div class="person-glimpse__categories">
-                                        <div class="category-tag-list category-tag-list--primary">
-                                            <a class="category-tag" href="/en/categories/subject/computer-science/digital-and-technology/">
-                                                <span class="category-tag__title">Digital and Technology</span>
-                                            </a>
-                                            <a class="category-tag" href="/en/categories/subject/computer-science/coding/">
-                                                <span class="category-tag__title">Coding</span>
-                                            </a>
-                                            <a class="category-tag" href="/en/categories/subject/human-and-social-sciences/creation-arts-and-design/">
-                                                <span class="category-tag__title">Creation, Arts and Design</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="person-glimpse__bio">
-                                        Participant interview seem its beautiful. Owner office happen TV front.
-                                        Much although mention edge. Hotel future view call society training.
-                                        Else east history protect draw many.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="person-glimpse">
-                            <a class="person-glimpse__media" href="/en/persons/mrs-curtis-conrad/" tabindex="-1" aria-hidden="true">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/af/8b/af8ba5b6-fcee-44ea-9fcc-07e066e5d8e2/portrait-8.png__200x200_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/af/8b/af8ba5b6-fcee-44ea-9fcc-07e066e5d8e2/portrait-8.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt=""/>
-                            </a>
-                            <div class="person-glimpse__content">
-                                <div class="person-glimpse__wrapper">
-                                    <a href="/en/persons/mrs-curtis-conrad/">
-                                        <h3 class="person-glimpse__title">Mrs. Curtis Conrad</h3>
-                                    </a>
-                                    <div class="person-glimpse__categories">
-                                        <div class="category-tag-list category-tag-list--primary">
-                                            <a class="category-tag" href="/en/categories/subject/computer-science/telecommunication-and-networks/">
-                                                <span class="category-tag__title">Telecommunication and Networks</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="person-glimpse__bio">
-                                        Hot song include assume. Front effect teacher strategy officer management up store.
-                                        Send traditional fact campaign manage. Stop church administration couple culture. Consider usually determine sure.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="person-glimpse">
-                            <a class="person-glimpse__media" href="/en/persons/elizabeth-davis/" tabindex="-1" aria-hidden="true">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/5e/37/5e3735c4-9544-4400-b167-569c82b02f91/portrait-5.png__200x200_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/5e/37/5e3735c4-9544-4400-b167-569c82b02f91/portrait-5.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt=""/>
-                            </a>
-                            <div class="person-glimpse__content">
-                                <div class="person-glimpse__wrapper">
-                                    <a href="/en/persons/elizabeth-davis/">
-                                        <h3 class="person-glimpse__title">Elizabeth Davis</h3>
-                                    </a>
-                                    <div class="person-glimpse__categories">
-                                        <div class="category-tag-list category-tag-list--primary">
-                                            <a class="category-tag" href="/en/categories/subject/science/agronomy-and-agriculture/"><span class="category-tag__title">Agronomy and Agriculture</span></a><a class="category-tag" href="/en/categories/subject/science/discovery-of-the-universe/"><span class="category-tag__title">Discovery of the Universe</span></a><a class="category-tag" href="/en/categories/subject/education-and-training/"><span class="category-tag__title">Education and Training</span></a></div></div><div class="person-glimpse__bio">
-                                    Good know reality under mind you talk. Though wish court difficult continue. Office nation end him boy.
-                                    Surface interesting food to half. Democrat two including official.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="person-glimpse">
-                            <a class="person-glimpse__media" href="/en/persons/dr-cheyenne-david/" tabindex="-1" aria-hidden="true">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/ff/98/ff987c64-b1ab-48d0-86b1-5a26c220b9f3/portrait-6.png__200x200_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/ff/98/ff987c64-b1ab-48d0-86b1-5a26c220b9f3/portrait-6.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt=""/>
-                            </a>
-                            <div class="person-glimpse__content">
-                                <div class="person-glimpse__wrapper">
-                                    <a href="/en/persons/dr-cheyenne-david/">
-                                        <h3 class="person-glimpse__title">Dr. Cheyenne David</h3>
-                                    </a>
-                                    <div class="person-glimpse__categories">
-                                        <div class="category-tag-list category-tag-list--primary">
-                                            <a class="category-tag" href="/en/categories/subject/human-and-social-sciences/social-issues-and-social-policy/">
-                                                <span class="category-tag__title">Social Issues and Social Policy</span>
-                                            </a>
-                                            <a class="category-tag" href="/en/categories/subject/science/cognitive-science/">
-                                                <span class="category-tag__title">Cognitive science</span>
-                                            </a>
-                                            <a class="category-tag" href="/en/categories/subject/education-and-training/">
-                                                <span class="category-tag__title">Education and Training</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="person-glimpse__bio">
-                                        Institution detail bar lawyer surface environmental market. Senior affect peace finally address.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-caesura">
+                    <div id="person_" class="section__items">
+
+
+                        <div id="more_person_btn" class="button-caesura">
                             <a href="/en/persons/">More persons</a>
                         </div>
                     </div>
                 </div>
+
+
             </section>
             <section class="section ">
                 <div class="section__row">
@@ -579,8 +230,8 @@
                         <div class="glimpse-quote">
                             <div class="glimpse-quote__wrapper">
                                 <div class="glimpse-quote__media">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f5/6d/f56d16ab-1cd3-4f01-9e20-5b0a907c11f9/portrait-4.png__200x200_q85_crop_subsampling-2_upscale.jpg"
-                                         srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/f5/6d/f56d16ab-1cd3-4f01-9e20-5b0a907c11f9/portrait-4.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w " sizes="200px" alt="">
+                                    <img src="{% static 'images/doctor.jpg'%}"
+                                         srcset="{% static 'images/doctor.jpg'%} 200w"  sizes="200px" alt="">
                                 </div>
                             </div>
                             <div class="glimpse-quote__content">
@@ -593,7 +244,7 @@
                         <div class="glimpse-quote">
                             <div class="glimpse-quote__wrapper">
                                 <div class="glimpse-quote__media">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/55/cf/55cfcdcd-332d-4241-b92d-2522ae4127de/portrait-8.png__200x200_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/55/cf/55cfcdcd-332d-4241-b92d-2522ae4127de/portrait-8.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt="">
+                                    <img src="{% static 'images/mike.jpg'%}" srcset="{% static 'images/mike.jpg'%} 200w" sizes="200px" alt="">
                                 </div>
                             </div>
                             <div class="glimpse-quote__content">
@@ -606,7 +257,7 @@
                         <div class="glimpse-quote">
                             <div class="glimpse-quote__wrapper">
                                 <div class="glimpse-quote__media">
-                                    <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/38/49/384936df-4fce-40c4-b0c0-3edb52b37349/portrait-3.png__200x200_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/38/49/384936df-4fce-40c4-b0c0-3edb52b37349/portrait-3.png__200x200_q85_crop_subsampling-2_upscale.jpg 200w" sizes="200px" alt="">
+                                    <img src="{% static 'images/david.jpeg'%}" srcset="{% static 'images/david.jpeg'%} 200w" sizes="200px" alt="">
                                 </div>
                             </div>
                             <div class="glimpse-quote__content">
@@ -622,7 +273,7 @@
                     <div class="section__items">
                         <div class="glimpse-card_square">
                             <div class="glimpse-card_square__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/b4/f1/b4f101f1-853c-4d60-ba0c-a8b70b29d690/cover7.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/b4/f1/b4f101f1-853c-4d60-ba0c-a8b70b29d690/cover7.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/b4/f1/b4f101f1-853c-4d60-ba0c-a8b70b29d690/cover7.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt="">
+                                <img src="{% static 'images/1.jpg'%}" srcset="{% static 'images/1.jpg'%} 300w, 600w" sizes="300px" alt="">
                             </div>
                             <div class="glimpse-card_square__wrapper">
                                 <h3 class="glimpse-card_square__title">Away step give.</h3>
@@ -630,7 +281,7 @@
                         </div>
                         <div class="glimpse-card_square">
                             <div class="glimpse-card_square__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/2e/d2/2ed283b2-e01e-46d0-b9fe-e1d2a0828e67/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/2e/d2/2ed283b2-e01e-46d0-b9fe-e1d2a0828e67/cover3.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/2e/d2/2ed283b2-e01e-46d0-b9fe-e1d2a0828e67/cover3.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt="">
+                                <img src="{% static 'images/2.jpg'%}" srcset="{% static 'images/2.jpg'%} 300w, 600w" sizes="300px" alt="">
                             </div>
                             <div class="glimpse-card_square__wrapper">
                                 <h3 class="glimpse-card_square__title">Like hard response up lot.</h3>
@@ -638,7 +289,7 @@
                         </div>
                         <div class="glimpse-card_square">
                             <div class="glimpse-card_square__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/38/42/38426b32-5ba6-418d-9094-98cf5eda8429/cover6.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/38/42/38426b32-5ba6-418d-9094-98cf5eda8429/cover6.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/38/42/38426b32-5ba6-418d-9094-98cf5eda8429/cover6.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt="">
+                                <img src="{% static 'images/3.jpg'%}" srcset="{% static 'images/3.jpg'%} 300w, 600w" sizes="300px" alt="">
                             </div>
                             <div class="glimpse-card_square__wrapper">
                                 <h3 class="glimpse-card_square__title">Look bring space around.</h3>
@@ -646,7 +297,7 @@
                         </div>
                         <div class="glimpse-card_square">
                             <div class="glimpse-card_square__media">
-                                <img src="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/28/ae/28ae1768-0cb9-453e-9e21-74f1a24699f8/cover2.jpg__300x170_q85_crop_subsampling-2_upscale.jpg" srcset="https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/28/ae/28ae1768-0cb9-453e-9e21-74f1a24699f8/cover2.jpg__300x170_q85_crop_subsampling-2_upscale.jpg 300w,https://dpaz9rouqy0e2.cloudfront.net/media/filer_public_thumbnails/filer_public/28/ae/28ae1768-0cb9-453e-9e21-74f1a24699f8/cover2.jpg__600x340_q85_crop_subsampling-2_upscale.jpg 600w" sizes="300px" alt="">
+                                <img src="{% static 'images/4.jpg'%}" srcset="{% static 'images/4.jpg'%} 300w, 600w" sizes="300px" alt="">
                             </div>
                             <div class="glimpse-card_square__wrapper">
                                 <h3 class="glimpse-card_square__title">Possible threat above identify.</h3>
@@ -797,21 +448,17 @@
 
             function get_courses()
             {
-              //elm = document.getElementById("search_input")
-              //alert(elm.value)
-
-              //var value = elm.value
                 try{
                     $.post('{% url "education:get_courses" %}',
                       {
                       },
                       function(data){
+                            var courses_elm = document.getElementById("courses_")
+                            var more_courses_btn = document.getElementById("more_courses_btn")
                         for (k in data)
                         {
                             course_elm = make_course_template(data[k])
-                            var courses_elm = document.getElementById("courses_")
-                            //alert(course_elm.outerHTML)
-                            var more_courses_btn = document.getElementById("more_courses_btn")
+                            //alert(courses_elm.outerHTML)
                             courses_elm.insertBefore(course_elm, more_courses_btn)
                         }
                       });
@@ -820,4 +467,250 @@
 
             get_courses()
 
-  {% endblock %}
+
+        function make_news_template(news)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("href", "/en/news/triple-buffered-value-added-attitude/")
+                    a_.setAttribute("class", "blogpost-glimpse")
+                    var p_ = document.createElement("p")
+                    a_.appendChild(p_)
+                    p_.setAttribute("class", "blogpost-glimpse__date")
+                    p_.innerHTML=news['news_date'];
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class","blogpost-glimpse__media")
+                    var img_ = document.createElement("img")
+                    div_.appendChild(img_)
+                    img_.setAttribute("src", news['image_url'])
+                    img_.setAttribute("srcset", news['image_url'] + " 300w")
+                    img_.setAttribute("sizes", "300px")
+                    img_.setAttribute("alt", "")
+                    var div_1 = document.createElement("div")
+                    a_.appendChild(div_1)
+                    div_1.setAttribute("class", "blogpost-glimpse__content")
+                    div_2 = document.createElement("div")
+                    div_1.appendChild(div_2)
+                    div_2.setAttribute("class", "blogpost-glimpse__wrapper")
+                    div_3 = document.createElement("div")
+                    div_2.appendChild(div_3)
+                    div_3.setAttribute("class", "blogpost-glimpse__categories")
+                    var span_ = document.createElement("span")
+                    div_3.appendChild(span_)
+                    span_.setAttribute("class", "category-tag")
+                    var span_1 = document.createElement("span")
+                    span_.appendChild(span_1)
+                    span_1.setAttribute("class", "category-tag__title")
+                    span_1.innerHTML=news['news_type'];
+                    var span_2 = document.createElement("span")
+                    div_3.appendChild(span_2)
+                    span_2.innerHTML=news['news_type_description'];
+                    span_2.setAttribute("class", "category-tag__title")
+                    var p_1 = document.createElement("p")
+                    div_2.appendChild(p_1)
+                    p_1.setAttribute("class", "blogpost-glimpse__title")
+                    p_1.innerHTML= news['news_title'];
+                    var p_2 = document.createElement("p")
+                    div_2.appendChild(p_2)
+                    p_2.setAttribute("class", "blogpost-glimpse__excerpt")
+                    p_2.innerHTML=news['news_description'];
+                    return a_
+
+               }
+
+
+        function get_news()
+            {
+                try{
+                    $.post('{% url "education:get_news" %}',
+                      {
+                      },
+                      function(data){
+                        var new_elm = document.getElementById("news_")
+                        var more_news_btn = document.getElementById("more_news_btn")
+                        for (k in data)
+                        {
+                            news_elm = make_news_template(data[k])
+                            //alert(news_elm.outerHTML)
+                            new_elm.insertBefore(news_elm, more_news_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_news()
+
+         function make_program_template(programs)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("href", "/en/programs/synergistic-systemic-website/")
+                    a_.setAttribute("class", "program-glimpse program-glimpse--link")
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class", "program-glimpse__media")
+                    img_ = document.createElement("img")
+                    div_.appendChild(img_)
+                    img_.setAttribute("src", programs['image_url'])
+                    img_.setAttribute("srcset", programs['image_url'] + " 300w")
+                    img_.setAttribute("sizes", "300px")
+                    img_.setAttribute("alt" , "")
+                    var div_1 = document.createElement("div")
+                    a_.appendChild(div_1)
+                    div_1.setAttribute("class", "program-glimpse__content")
+                    var div_2 = document.createElement("div")
+                    div_1.appendChild(div_2)
+                    div_2.setAttribute("class", "program-glimpse__wrapper")
+                    var p_ = document.createElement("p")
+                    div_2.appendChild(p_)
+                    p_.setAttribute("class", "program-glimpse__title")
+                    p_.innerHTML=programs['program_title'];
+                    var p_1 = document.createElement("p")
+                    div_2.appendChild(p_1)
+                    p_1.innerHTML=programs['program_description'];
+
+                   return a_
+                 }
+
+
+
+              function get_program()
+            {
+                try{
+                    $.post('{% url "education:get_program" %}',
+                      {
+                      },
+                      function(data){
+                        var program_elm = document.getElementById("program_")
+                        var more_program_btn = document.getElementById("more_program_btn")
+                        for (k in data)
+                        {
+                            programs_elm = make_program_template(data[k])
+                            //alert(programs_elm.outerHTML)
+                            program_elm.insertBefore(programs_elm, more_program_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_program()
+
+          function make_subject_template(subjects)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("class", "category-glimpse")
+                    a_.setAttribute("href", "/en/categories/subject/science/chemistry/")
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class", "category-glimpse__body")
+                    div_1 = document.createElement("div")
+                    div_.appendChild(div_1)
+                    div_1.setAttribute("class", "category-glimpse__logo")
+                    img_ = document.createElement("img")
+                    div_1.appendChild(img_)
+                    img_.setAttribute("src", subjects['image_url'] )
+                    img_.setAttribute("srcset", subjects['image_url'] + " 200w")
+                    img_.setAttribute("sizes", "200px")
+                    img_.setAttribute("alt" , "")
+                    var h3_ = document.createElement("h3")
+                    div_.appendChild(h3_)
+                    h3_.setAttribute("class", "category-glimpse__title")
+                    h3_.innerHTML= subjects['subject_name'];
+                    //alert(a_.outerHTML)
+
+                   return a_
+                 }
+
+
+
+              function get_subject()
+            {
+                try{
+                    $.post('{% url "education:get_subject" %}',
+                      {
+                      },
+                      function(data){
+                        var subject_elm = document.getElementById("subject_")
+                        var more_subject_btn = document.getElementById("more_subject_btn")
+                        for (k in data)
+                        {
+                            subjects_elm = make_subject_template(data[k])
+                            //alert(subjects_elm.outerHTML)
+                            subject_elm.insertBefore(subjects_elm, more_subject_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_subject()
+
+          function make_person_template(persons)
+          {
+                var div_ = document.createElement("div")
+                div_.setAttribute("class", "person-glimpse")
+                var a_ = document.createElement("a")
+                div_.appendChild(a_)
+                a_.setAttribute("class", "person-glimpse__media")
+                a_.setAttribute("href", "/en/persons/dr-diane-baker/")
+                a_.setAttribute("tabindex", "-1")
+                a_.setAttribute("aria-hidden", "true")
+                var img_ = document.createElement("img")
+                a_.appendChild(img_)
+                img_.setAttribute("src", persons['image_url'])
+                img_.setAttribute("srcset", persons['image_url'] + " 200w")
+                var div_1 = document.createElement("div")
+                div_.appendChild(div_1)
+                div_1.setAttribute("class", "person-glimpse__content")
+                var div_2 = document.createElement("div")
+                div_1.appendChild(div_2)
+                div_2.setAttribute("class", "person-glimpse__wrapper")
+                var a_1 = document.createElement("a")
+                div_2.appendChild(a_1)
+                a_1.setAttribute("href", "/en/persons/dr-diane-baker/")
+                var h3_ = document.createElement("h3")
+                a_1.appendChild(h3_)
+                h3_.setAttribute("class", "person-glimpse__title")
+                h3_.innerHTML=persons['persons_name'];
+                var div_3 = document.createElement("div")
+                div_2.appendChild(div_3)
+                div_3.setAttribute("class", "person-glimpse__categories")
+                var div_4 = document.createElement("div")
+                div_3.appendChild(div_4)
+                div_4.setAttribute("class", "category-tag-list category-tag-list--primary")
+                var a_2 = document.createElement("a")
+                div_4.appendChild(a_2)
+                a_2.setAttribute("class", "category-tag")
+                a_2.setAttribute("href", "/en/categories/subject/computer-science/digital-and-technology/")
+                var span_ = document.createElement("span")
+                a_2.appendChild(span_)
+                span_.setAttribute("class", "category-tag__title")
+                span_.innerHTML= persons['persons_duty'];
+                var div_5 = document.createElement("div")
+                div_2.appendChild(div_5)
+                div_5.setAttribute("class", "person-glimpse__bio")
+                div_5.innerHTML=persons['persons_description'];
+               //alert(div_.outerHTML)
+                return div_
+          }
+
+           function get_person()
+            {
+                try{
+                    $.post('{% url "education:get_person" %}',
+                      {
+                      },
+                      function(data){
+                        var person_elm = document.getElementById("person_")
+                        var more_person_btn = document.getElementById("more_person_btn")
+                        for (k in data)
+                        {
+                            persons_elm = make_person_template(data[k])
+                            //alert(programs_elm.outerHTML)
+                            person_elm.insertBefore(persons_elm, more_person_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_person()
+
+{% endblock %}
