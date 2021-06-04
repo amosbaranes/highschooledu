@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import InstitutionWeb, Course, New, Program, Subject, Person
+from .models import InstitutionWeb, Course, New, Program, Subject, Person, Phrase, AdditionalTopic
 
 
 @admin.register(InstitutionWeb)
 class InstitutionWebAdmin(admin.ModelAdmin):
-    list_display = ('id', 'order', 'institution_name', 'email', 'phone', )
+    list_display = ('id', 'order', 'institution_name', 'domain_name', 'email', 'phone', )
 
 
 @admin.register(Course)
@@ -35,4 +35,15 @@ class SubjectAdmin(admin.ModelAdmin):
 class PersonAdmin(admin.ModelAdmin):
     list_display = ('id', 'order', 'persons_name', 'persons_description', 'is_popular', 'is_active',)
     list_filter = ('is_active', 'is_popular', )
+
+
+@admin.register(Phrase)
+class PhraseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'image', 'persons_phrase', 'is_active')
+
+
+@admin.register(AdditionalTopic)
+class PhraseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'order', 'image', 'topic_description', 'is_active')
+
 

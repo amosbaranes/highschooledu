@@ -118,16 +118,15 @@
     <div class="body-content">
         <div class="homepage">
 
-            <div class="hero-intro" style="background-image: url('/static/images/WhatsApp Image 2021-06-01 at 3.37.10 PM.jpeg');">
+            <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
                 <div class="hero-intro__inner">
                     <div class="hero-intro__body">
                         <div class="hero-intro__content">
                             <h1 class="hero-intro__title">
-                                Welcome <strong>to {{institution_obj.institution_name}}</strong>
+                                <strong>{{institution_obj.institution_name}}</strong>
                             </h1>
-                            <p>It works! This is the default homepage for the Richie CMS.</p>
+                            <p>{{institution_obj.welcome_phrase}}</p>
                         </div>
-
                         <div class="hero-intro__search">
                             <p class="hero-intro__search-title">Search in our courses</p>
                             <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'>
@@ -147,12 +146,9 @@
                             </div>
                             <a class="hero-intro__cta" href="/en/courses/">Explore our catalog</a>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Popular courses</h2>
@@ -179,7 +175,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Programs</h2>
@@ -191,10 +186,6 @@
                     </div>
                 </div>
             </section>
-
-
-
-
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Subjects</h2>
@@ -206,10 +197,6 @@
                     </div>
                 </div>
             </section>
-
-
-
-
             <section class="section ">
                 <div class="section__row">
                     <h2 class="section__title">Persons</h2>
@@ -227,82 +214,38 @@
             <section class="section ">
                 <div class="section__row">
                     <div class="section__items">
+                        {% for phrase in phrases %}
                         <div class="glimpse-quote">
                             <div class="glimpse-quote__wrapper">
                                 <div class="glimpse-quote__media">
-                                    <img src="{% static 'images/doctor.jpg'%}"
-                                         srcset="{% static 'images/doctor.jpg'%} 200w"  sizes="200px" alt="">
+                                    <img src="{{ phrase.image.url }}"
+                                         srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
                                 </div>
                             </div>
                             <div class="glimpse-quote__content">
                                 <svg role="img"><use href="#icon-quote" /></svg>
-                                <p>Develop partner local wear skill. Former power deal ability.
-                                    <br>Compare newspaper until current. Event yes heavy get. Much show adult me address couple skill.
-                                </p>
+                                <p>{{phrase.persons_phrase}}</p>
                             </div>
                         </div>
-                        <div class="glimpse-quote">
-                            <div class="glimpse-quote__wrapper">
-                                <div class="glimpse-quote__media">
-                                    <img src="{% static 'images/mike.jpg'%}" srcset="{% static 'images/mike.jpg'%} 200w" sizes="200px" alt="">
-                                </div>
-                            </div>
-                            <div class="glimpse-quote__content">
-                                <svg role="img"><use href="#icon-quote" /></svg>
-                                <p>Toward other history lay. Test Republican customer around throw church break.
-                                    <br>Piece myself between attack. Yet seat about movie against also site. Go truth hear several assume.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="glimpse-quote">
-                            <div class="glimpse-quote__wrapper">
-                                <div class="glimpse-quote__media">
-                                    <img src="{% static 'images/david.jpeg'%}" srcset="{% static 'images/david.jpeg'%} 200w" sizes="200px" alt="">
-                                </div>
-                            </div>
-                            <div class="glimpse-quote__content">
-                                <svg role="img"><use href="#icon-quote" /></svg>
-                                <p>Her turn usually authority kid.<br>Treat seven involve job. By face turn fight avoid much response.</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
             <section class="section ">
                 <div class="section__row">
                     <div class="section__items">
-                        <div class="glimpse-card_square">
+                         {% for topic in topics %}
+                     <div class="glimpse-card_square">
                             <div class="glimpse-card_square__media">
-                                <img src="{% static 'images/1.jpg'%}" srcset="{% static 'images/1.jpg'%} 300w, 600w" sizes="300px" alt="">
+                                <img src="{{topic.image.url }}"
+                                 srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
                             </div>
                             <div class="glimpse-card_square__wrapper">
-                                <h3 class="glimpse-card_square__title">Away step give.</h3>
+                                <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
                             </div>
                         </div>
-                        <div class="glimpse-card_square">
-                            <div class="glimpse-card_square__media">
-                                <img src="{% static 'images/2.jpg'%}" srcset="{% static 'images/2.jpg'%} 300w, 600w" sizes="300px" alt="">
-                            </div>
-                            <div class="glimpse-card_square__wrapper">
-                                <h3 class="glimpse-card_square__title">Like hard response up lot.</h3>
-                            </div>
-                        </div>
-                        <div class="glimpse-card_square">
-                            <div class="glimpse-card_square__media">
-                                <img src="{% static 'images/3.jpg'%}" srcset="{% static 'images/3.jpg'%} 300w, 600w" sizes="300px" alt="">
-                            </div>
-                            <div class="glimpse-card_square__wrapper">
-                                <h3 class="glimpse-card_square__title">Look bring space around.</h3>
-                            </div>
-                        </div>
-                        <div class="glimpse-card_square">
-                            <div class="glimpse-card_square__media">
-                                <img src="{% static 'images/4.jpg'%}" srcset="{% static 'images/4.jpg'%} 300w, 600w" sizes="300px" alt="">
-                            </div>
-                            <div class="glimpse-card_square__wrapper">
-                                <h3 class="glimpse-card_square__title">Possible threat above identify.</h3>
-                            </div>
-                        </div>
+
+                        {% endfor %}
                     </div>
                 </div>
 

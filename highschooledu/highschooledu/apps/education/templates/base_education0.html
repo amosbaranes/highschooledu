@@ -25,7 +25,7 @@
                 <div class="topbar__brand">
                     <button class="topbar__hamburger" data-target="main-menu" aria-label="menu" aria-expanded="false">&#8801;</button>
                     <a href="/">
-                        <img src="//dpaz9rouqy0e2.cloudfront.net/static/richie/images/logo.bc96dea393cb.png" class="topbar__logo" alt="Richie demonstration">
+                        <img src="{{ institution_obj.logo_image.url }}" width="72px" height="100px" alt="">
                     </a>
                 </div>
                 <div class="topbar__menu">
@@ -108,18 +108,17 @@
                         <a href="//localhost:8080/en/annex/sitemap/">Sitemap</a>
                         <a href="/styleguide/">Style guide</a>
                         <div class="nested-item nested-item--list nested-item--0">
-                            <div class="nested-item__content">Richie community</div>
+                            <div class="nested-item__content">{{institution_obj.institution_name}} community</div>
                             <ul class="nested-item__items">
-                                <li><a href="https://richie.education">Website</a></li>
+                                <li><a href="https://"+{{institution_obj.domain_name}}>Website</a></li>
                                 <li><a href="https://github.com/openfun/richie">Github</a></li>
-                                <li><a href="https://github.com/openfun/richie-site-factory">Site factory</a></li>
-                                <li><a href="https://www.fun-campus.fr">Example site</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="body-footer__brand">
-                    <a href="/"><img src="//dpaz9rouqy0e2.cloudfront.net/static/richie/images/logo-alt.fc0399d9114f.png" alt=""></a>
+                    <a href="/">
+                        <img src="{{ institution_obj.footer_image.url }}" width="72px" height="100px" alt=""></a>
                 </div>
                 <div class="body-footer__insert">
                     <p class="body-footer__title">Life-changing learning!</p>
@@ -148,6 +147,7 @@
       }
       </script>
                     <div class="richie-react richie-react--language-selector" data-props-source="[data-language-selector]"></div>
+
                     <div class="body-footer__badges">
                         <a href="https://www.facebook.com/example" class="body-footer__badge" target="_blank">
                             <svg role="img"><title>Facebook</title><use href="#icon-facebook" /></svg>
