@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 @apphook_pool.register  # register the application
 class EducationApp(CMSApp):
 
-    app_name = 'education'
+    app_name = 'education_app'
 
     name = _('Education')
 
