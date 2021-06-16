@@ -16,7 +16,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path("admin/", admin.site.urls),
     path(r'core/', include('highschooledu.apps.core.urls')),
-    path(r'e/', include('highschooledu.apps.education.urls')),
+    # path(r'e/', include('highschooledu.apps.education.urls')),
     path(r'search/', include('highschooledu.apps.search.urls')),
     path(r'webcompanies/', include('highschooledu.apps.webcompanies.urls')),
     path("", include("cms.urls"))
