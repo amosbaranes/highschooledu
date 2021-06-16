@@ -7,12 +7,12 @@ from django.utils.translation import ugettext_lazy as _
 
 
 @apphook_pool.register  # register the application
-class UsersApp(CMSApp):
+class EducationApp(CMSApp):
 
-    app_name = 'users'
+    app_name = 'education'
 
-    name = _('Users')
+    name = _('Education')
 
     def get_urls(self, page=None, language=None, **kwargs):
-        return ["highschooledu.apps.users.urls"]
+        return ["highschooledu.apps.education.urls"]
 
