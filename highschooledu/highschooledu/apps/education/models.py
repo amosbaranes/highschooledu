@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
+from cms.models.fields import PlaceholderField
 
 
 class InstitutionWeb(models.Model):
@@ -13,11 +14,12 @@ class InstitutionWeb(models.Model):
     order = models.IntegerField(default=1000, null=True, blank=True)
     institution_name = models.CharField(max_length=100, null=True, blank=True)
     domain_name = models.CharField(max_length=100, null=True, blank=True)
+    github_domain_name = models.CharField(max_length=100, null=True, blank=True)
     welcome_phrase = models.CharField(max_length=100, null=True, blank=True)
     institution_image = models.ImageField(upload_to='institution/', blank=True, null=True)
     logo_image = models.ImageField(upload_to='institution/', blank=True, null=True)
     footer_image = models.ImageField(upload_to='institution/', blank=True, null=True)
-
+    footer_phrase = models.CharField(max_length=100, null=True, blank=True)
     institution_short_description = models.CharField(max_length=200, null=True, blank=True)
     youtube_video_address = models.CharField(max_length=100, null=True)
 
@@ -41,11 +43,11 @@ class Course(models.Model):
     institution_web = models.ForeignKey(InstitutionWeb, on_delete=models.CASCADE, default=1, related_name='courses')
     order = models.IntegerField(default=1000, blank=True)
     course_name = models.CharField(max_length=100, null=True)
-    course_description = models.CharField(max_length=200, null=True)
     course_date = models.DateField(blank=True, null=True)
     image = models.ImageField(upload_to='courses/', blank=True, null=True)
     is_popular = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
+    description = PlaceholderField('description')
 
 
 class New(models.Model):

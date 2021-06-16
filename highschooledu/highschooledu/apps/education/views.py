@@ -4,7 +4,7 @@ from django.core.mail import EmailMessage
 from django.http import JsonResponse
 from ..webcompanies.WebCompanies import WebSiteCompany
 from django.http import JsonResponse
-from .models import Phrase, AdditionalTopic
+from .models import Phrase, AdditionalTopic, Course
 
 
 def institution(request, model=''):
@@ -38,6 +38,15 @@ def home(request):
                                                    })
 
 
+def course_description(request, pk):
+    course = Course.objects.get(id=pk)
+    institution_ = institution(request)
+    return render(request, 'education/course_description.html',
+                  {'course': course,
+                   'institution_obj': institution_,
+                   })
+
+
 def get_courses(request):
     courses = institution(request, 'courses')
     rr = {}
@@ -45,11 +54,11 @@ def get_courses(request):
         rr[str(course.id)] = {
                                 'course_name': course.course_name,
                                 'order': course.order,
-                                'course_description': course.course_description,
                                 'course_date': course.course_date,
                                 'is_popular': course.is_popular,
                                 'image_url': course.image.url
                                 }
+
     return JsonResponse(rr)
 
 

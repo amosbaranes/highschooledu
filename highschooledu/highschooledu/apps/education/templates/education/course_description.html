@@ -1,0 +1,37 @@
+{% extends "base_education.html" %}
+{% load static i18n cms_tags menu_tags sekizai_tags thumbnail %}
+
+
+{% block title %}
+<title>{{ course.course_name }}</title>
+{% endblock%}
+
+
+
+{% block body_content %}
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="color:blue">{% render_model course "course_name" %}</h1><br>
+<img width="200px" height="160px" src="{{course.image.url}}">
+<br>
+<br>
+Amos
+<br/>
+<br/>amos
+
+    <br/>
+{% render_placeholder course.description %}
+<br/>amos<br/>
+
+
+
+{% endblock%}
