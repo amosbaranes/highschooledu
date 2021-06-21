@@ -57,7 +57,7 @@ def get_courses(request):
                                 'course_date': course.course_date,
                                 'is_popular': course.is_popular,
                                 'image_url': course.image.url,
-                                'description': course.description
+                                'short_description': course.short_description
                                 }
 
     return JsonResponse(rr)

@@ -47,6 +47,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='courses/', blank=True, null=True)
     is_popular = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
+    short_description = models.CharField(max_length=200, null=True)
     description = PlaceholderField('description')
 
 
