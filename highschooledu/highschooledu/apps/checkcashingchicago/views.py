@@ -53,21 +53,21 @@ def location_detail(request, slug):
 
 # not used we should delete it
 def get_location(request):
-    locations = check_cashing(request, 'locations')
+    # locations = check_cashing(request, 'locations')
     rr = {}
-    print(locations)
-    for location in locations:
-        print(location.image)
-        rr[str(location.id)] = {
-                                'location_heading': location.location_heading,
-                                'order': location.order,
-                                'image_url': location.image.url,
-                                'location_info': location.location_info,
-                                'data_ajax_id': location.data_ajax_id,
-                                'grid_loop': location.grid_loop,
-                                'grid_parity': location.grid_parity,
-                                'south_suburbs_sort': location.south_suburbs_sort
-                                }
+    # print(locations)
+    # for location in locations:
+    #     print(location.image)
+    #     rr[str(location.id)] = {
+    #                             'location_heading': location.location_heading,
+    #                             'order': location.order,
+    #                             'image_url': location.image.url,
+    #                             'location_info': location.location_info,
+    #                             'data_ajax_id': location.data_ajax_id,
+    #                             'grid_loop': location.grid_loop,
+    #                             'grid_parity': location.grid_parity,
+    #                             'south_suburbs_sort': location.south_suburbs_sort
+    #                             }
 
     return JsonResponse(rr)
 
