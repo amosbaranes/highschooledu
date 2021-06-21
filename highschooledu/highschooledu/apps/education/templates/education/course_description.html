@@ -19,17 +19,32 @@
 <br>
 <br>
 <h1 style="color:blue">{% render_model course "course_name" %}</h1><br>
+{% render_model course "image" %}
 <img width="200px" height="160px" src="{{course.image.url}}">
 <br>
+{% render_model course "description" %}
 <br>
-Amos
+amos
 <br/>
 <br/>amos
 
     <br/>
 {% render_placeholder course.description %}
 <br/>amos<br/>
-
-
-
 {% endblock%}
+
+
+{% block content %}
+
+{% placeholder "header" %}
+{% placeholder "content" %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+

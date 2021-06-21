@@ -129,6 +129,8 @@ LOCAL_APPS = [
     'highschooledu.apps.core',
     'highschooledu.apps.partners',
     'highschooledu.apps.education',
+    'highschooledu.apps.checkcashingchicago',
+
     'highschooledu.apps.users',
     'highschooledu.apps.webcompanies',
     'highschooledu.apps.search',
@@ -234,7 +236,7 @@ THUMBNAIL_PROCESSORS = (
 WEB_SITE_COMPANY_ID = 'WebSiteCompany'
 
 
-ELASTICSEARCH_DSL={
+ELASTICSEARCH_DSL = {
     'default': {
         'hosts': 'localhost:9200'
     },

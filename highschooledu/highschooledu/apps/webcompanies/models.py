@@ -24,7 +24,8 @@ class WebCompanies(models.Model):
                                       'bizlandweb',
                                       'radiusfoodweb',
                                       'countries',
-                                      'institutionweb'
+                                      'institutionweb',
+                                      'checkcashingweb'
                                   )})
 
     target_id = models.PositiveIntegerField(null=True, blank=True, db_index=True)

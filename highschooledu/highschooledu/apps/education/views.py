@@ -19,7 +19,7 @@ def institution(request, model=''):
         print(ex)
 
     if model != '':
-        s = "objs = web_company.target."+model+".all()"
+        s = "objs = web_company.target."+model+".filter(is_active=True).all()"
         dic_ = {'web_company': web_company}
         exec(s, dic_)
         objs = dic_['objs']
@@ -56,7 +56,8 @@ def get_courses(request):
                                 'order': course.order,
                                 'course_date': course.course_date,
                                 'is_popular': course.is_popular,
-                                'image_url': course.image.url
+                                'image_url': course.image.url,
+                                'description': course.description
                                 }
 
     return JsonResponse(rr)

@@ -1,5 +1,5 @@
 {% extends "base_education.html" %}
-{% load static %}
+{% load static i18n cms_tags menu_tags sekizai_tags thumbnail %}
 
 {% block title %}
 <title>{{ company_obj.company_name }}</title>
@@ -141,6 +141,12 @@
     </section>
 {% endblock %}
 
+{% block content %}
+   {% placeholder "header" %}
+   {% placeholder "content" %}
+{% endblock content %}
+
+
   {% block js %}
         <script>
             window.__richie_frontend_context__ = JSON.parse('{"context": {"csrftoken": "768IGrqrYPenfUujq5oHR37cYmw17KZbHxhX2QTj8PkvXmQxe6TVz7SlIgIpdIVw", "environment": "production", "release": "demo-1.9.0", "sentry_dsn": "https://b0ed6c7e47554152918928057029315c@sentry.io/1198559", "authentication": {"endpoint": "https://edx.richie.education", "backend": "openedx-hawthorn"}, "lms_backends": [{"endpoint": "https://edx.richie.education", "backend": "openedx-hawthorn", "course_regexp": "^.*/courses/(?<course_id>.*)/course/?$"}]}}');
@@ -260,7 +266,7 @@ link_course += '/'
             use_.setAttribute("href", "#icon-pin")
             var span_ = document.createElement("span")
             div111_.appendChild(span_)
-            span_.innerHTML = course['course_description']
+            span_.innerHTML = course['description']
             var div12_ = document.createElement("div")
             div1_.appendChild(div12_)
             div12_.setAttribute("class", "course-glimpse-footer")
@@ -565,7 +571,7 @@ return sortable
                         for (k in data)
                         {
                             persons_elm = make_person_template(data[k])
-                            //alert(programs_elm.outerHTML)
+                            //alert(persons_elm.outerHTML)
                             person_elm.insertBefore(persons_elm, more_person_btn)
                         }
                       });

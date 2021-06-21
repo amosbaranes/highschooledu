@@ -1,0 +1,103 @@
+{% extends "base_checkcashingchicago.html" %}
+{% load static %}
+
+  {% block title %}
+  <title>{{location.location_heading}}</title>
+  {% endblock%}
+
+  {% block body %}
+   <body id="top" class="portfolio-template-default single single-portfolio postid-169 stretched lato lora " itemscope="itemscope" itemtype="https://schema.org/WebPage"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+  {% endblock %}
+
+  {% block body_content %}
+
+   <div class="main_color container_wrap_first container_wrap fullsize"><div class="container">
+        <main role="main" itemprop="mainContentOfPage" class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-169">
+                <div class="entry-content-wrapper clearfix">
+                    <div class="flex_column av_one_full  flex_column_div av-zero-column-padding first  avia-builder-el-0  el_before_av_one_half  avia-builder-el-first  " style="border-radius:0px; ">
+                        <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                            <div class="avia_textblock " itemprop="text">
+                                <h1>South Chicago Heights Currency Exchange</h1>
+                            </div>
+                        </section>
+                        <div style="height:50px" class="hr hr-invisible  avia-builder-el-2  el_after_av_textblock  avia-builder-el-last ">
+                            <span class="hr-inner "><span class="hr-inner-style"></span></span>
+                        </div>
+                    </div>
+                    <div class="flex_column_table av-equal-height-column-flextable">
+                        <div class="flex_column av_one_half  flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding first  avia-builder-el-3  el_after_av_one_full  el_before_av_one_half  column-top-margin" style="border-radius:0px; "><div class="avia-image-container  av-styling-   avia-builder-el-4  avia-builder-el-no-sibling  avia-align-center " itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                            <div class="avia-image-container-inner">
+                                <img class="avia_image " src="https://web.archive.org/web/20180817113205im_/http://checkcashingchicago.com/wp-content/uploads/2014/09/Sibley-Blvd-at-the-Calumet-Expwy-CE-3.jpg" alt="" title="Sibley-Blvd-at-the-Calumet-Expwy-CE-#3" itemprop="contentURL"/>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="av-flex-placeholder"></div>
+                        <div class="flex_column av_one_half  flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding   avia-builder-el-5  el_after_av_one_half  el_before_av_one_full  column-top-margin" style="border-radius:0px; ">
+                            <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                                <div class="avia_textblock " style="font-size:19px; " itemprop="text">
+                                    <p><strong>Location</strong><br/>
+                                        3259 Chicago Road<br/>
+                                        South Chicago Heights IL 60411<br/>
+                                        Phone: 708-755-9200<br/>
+                                        Fax: 708-755-9203</p>
+                                        <p><strong>Hours</strong><br/>
+                                        Monday &#8211; Thursday 8am &#8211; 9pm<br/>
+                                        Friday 8am &#8211; 10pm<br/>
+                                        Saturday 8am &#8211; 6pm<br/>
+                                        Sunday 9am &#8211; 6pm</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div><!--close column table wrapper. Autoclose:  -->
+
+                    <div class="flex_column av_one_full  flex_column_div first  avia-builder-el-7  el_after_av_one_half  el_before_av_one_third  column-top-margin">
+    <div style="padding-bottom:10px;" class="av-special-heading av-special-heading-h3    avia-builder-el-8  avia-builder-el-no-sibling  ">
+        <h3 class="av-special-heading-tag" itemprop="headline">Services</h3>
+        <div class="special-heading-border"><div class="special-heading-inner-border"></div>
+        </div>
+    </div>
+</div>
+
+                    <div class="flex_column av_one_third  flex_column_div av-zero-column-padding first  avia-builder-el-9  el_after_av_one_full  el_before_av_one_third  column-top-margin" style="border-radius:0px; ">
+                        <section class="avia_codeblock_section avia_code_block_0" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                            <div class="avia_codeblock " itemprop="text">
+
+                            {% for service in location.services.all %}
+                            <div>
+                                <span class="collapseomatic noarrow" id="id{{ service.id }}" rel="service-highlander" tabindex="0" title="{{service.title}}">
+                                    {{service.title}}
+                                </span>
+                                <div id="target-id{{ service.id }}" class="collapseomatic_content services">{{service.description}}</div>
+                            </div>
+
+                                {% if forloop.counter == 11 %}
+                        </section>
+                    </div>
+                    <div class="flex_column av_one_third  flex_column_div av-zero-column-padding   avia-builder-el-11  el_after_av_one_third  el_before_av_one_third  column-top-margin" style="border-radius:0px; ">
+                        <section class="avia_codeblock_section avia_code_block_1" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                            <div class="avia_codeblock " itemprop="text">
+                                {% endif %}
+                                {% if forloop.counter == 22 %}
+                        </section>
+                    </div>
+                    <div class="flex_column av_one_third  flex_column_div av-zero-column-padding   avia-builder-el-11  el_after_av_one_third  el_before_av_one_third  column-top-margin" style="border-radius:0px; ">
+                        <section class="avia_codeblock_section avia_code_block_1" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                            <div class="avia_codeblock " itemprop="text">
+                                {% endif %}
+
+                            {% endfor %}
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main><!-- close content main element --></div></div>
+
+   <div id="avia-google-map-nr-1" class="avia-google-maps avia-google-maps-section main_color  avia-builder-el-15  el_after_av_one_third  avia-builder-el-last  container_wrap fullsize"><div id="av_gmap_1" class="avia-google-map-container" data-mapid="1" style="height: 300px;">
+
+   </div></div>
+<div><div>		</div><!--end builder template--></div><!-- close default .container_wrap element -->
+
+{% endblock %}

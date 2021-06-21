@@ -25,7 +25,6 @@ class WebSiteCompany(object):
         self.web_site_company = request.session[settings.WEB_SITE_COMPANY_ID]
         # print(settings.WEB_SITE_COMPANY_ID)
 
-
     def is_registered_domain(self):
         return self.web_site_company is not None
 

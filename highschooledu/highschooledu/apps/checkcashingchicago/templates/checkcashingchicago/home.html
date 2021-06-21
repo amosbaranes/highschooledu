@@ -1,0 +1,234 @@
+{% extends "base_checkcashingchicago.html" %}
+{% load static %}
+
+  {% block body %}
+   <body id="top" class="home page-template-default page page-id-265 stretched lato lora " itemscope="itemscope" itemtype="https://schema.org/WebPage">
+  {% endblock %}
+
+  {% block body_content %}
+		  <div id="about" class="avia-section main_color avia-section-default avia-shadow avia-full-stretch av-parallax-section av-section-color-overlay-active avia-bg-style-parallax  avia-builder-el-0  el_before_av_section  avia-builder-el-first  av-minimum-height av-minimum-height-100 container_wrap fullsize" data-section-bg-repeat="stretch">
+			  <div class="av-parallax" data-avia-parallax-ratio="0.3">
+				  <div class="av-parallax-inner main_color  avia-full-stretch" style="background-repeat: no-repeat;
+				  background-image: url('{{ company_obj.main_image.url }}'); background-attachment: scroll; background-position: top center; ">
+				  </div>
+			  </div>
+			  <div class="av-section-color-overlay-wrap">
+				  <div class="av-section-color-overlay" style="opacity: 0.5; background-color: #0a0a0a; "></div>
+				  <div class="container">
+					  <main role="main" itemprop="mainContentOfPage" class="template-page content  av-content-full alpha units">
+						  <div class="post-entry post-entry-type-page post-entry-265">
+							  <div class="entry-content-wrapper clearfix">
+								  <div class="flex_column av_one_full  flex_column_div first  avia-builder-el-1  avia-builder-el-no-sibling  " style="padding:50px; background-color:#333333; border-radius:0px; ">
+									  <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+										  <div class="avia_textblock  av_inherit_color" style="color:#bfbfbf; " itemprop="text">
+											  <h1 style="text-align: center;">
+												  <span style="color: #bfbfbf;">{{ company_obj.main_title }}</span>
+											  </h1>
+											  <div style="max-width: 674px; margin: auto; text-align: center;">
+												  <span class="collapseomatic noarrow expandcue" id="id3942" rel="program-highlander" tabindex="0" title="<strong>Who are we?</strong>">
+													  <strong>{{ company_obj.main_sub_title }}</strong>
+												  </span>
+												  <div id="target-id3942" class="collapseomatic_content "><br/>
+													  {{ company_obj.main_sub_description }}<br/>
+												  </div>
+											  </div>
+										  </div>
+									  </section>
+								  </div>
+							  </div>
+						  </div>
+					  </main><!-- close content main element -->
+				  </div>
+			  </div>
+		  </div>
+		  <div id="locations" class="avia-section main_color avia-section-large avia-shadow avia-full-stretch av-parallax-section av-section-color-overlay-active avia-bg-style-parallax  avia-builder-el-3  el_after_av_section  el_before_av_section  container_wrap fullsize" data-section-bg-repeat="stretch">
+			  <div class="av-parallax" data-avia-parallax-ratio="0.3">
+				  <div class="av-parallax-inner main_color  avia-full-stretch" style="background-repeat: no-repeat;
+				  background-image: url({{company_obj.background_location_image.url}}); background-attachment: scroll; background-position: bottom center; ">
+				  </div>
+			  </div>
+			  <div class="av-section-color-overlay-wrap">
+				  <div class="av-section-color-overlay" style="opacity: 0.5; background-color: #ffffff; "></div>
+				  <div class="container">
+					  <div class="template-page content  av-content-full alpha units">
+						  <div class="post-entry post-entry-type-page post-entry-265">
+							  <div class="entry-content-wrapper clearfix">
+								  <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+									  <div class="avia_textblock " itemprop="text">
+										  <h2 style="text-align: center;">{{company_obj.location_title}}</h2>
+									  </div>
+								  </section>
+								  <div class="sort_width_container av-sort-yes-tax" data-portfolio-id="1">
+									  <div id="js_sort_items">
+										  <div class="av-current-sort-title">
+											  <span class="inner_sort_button">
+												  <span>All</span>
+												  <small class="av-cat-count"> 12 </small>
+											  </span>
+										  </div>
+										  <div class="sort_by_cat  ">
+											  <a href="#" data-filter="all_sort" class="all_sort_button active_sort">
+												  <span class="inner_sort_button">
+													  <span>All</span>
+													  <small class="av-cat-count"> 12 </small>
+												  </span>
+											  </a>
+											  <span class="text-sep grundy-county_sort_sep">/</span>
+											  <a href="#" data-filter="grundy-county_sort" class="grundy-county_sort_button">
+												  <span class="inner_sort_button">
+													  <span>Grundy County</span>
+													  <small class="av-cat-count"> 1 </small>
+												  </span>
+											  </a>
+											  <span class="text-sep north-side_sort_sep">/</span>
+											  <a href="#" data-filter="north-side_sort" class="north-side_sort_button">
+												  <span class="inner_sort_button"><span>North Side</span>
+													  <small class="av-cat-count"> 1 </small>
+												  </span>
+											  </a>
+											  <span class="text-sep south-suburbs_sort_sep">/</span>
+											  <a href="#" data-filter="south-suburbs_sort" class="south-suburbs_sort_button">
+												  <span class="inner_sort_button">
+													  <span>South Suburbs</span>
+													  <small class="av-cat-count"> 9 </small>
+												  </span>
+											  </a>
+											  <span class="text-sep south-west_sort_sep">/</span>
+											  <a href="#" data-filter="south-west_sort" class="south-west_sort_button">
+												  <span class="inner_sort_button">
+													  <span>South West</span>
+													  <small class="av-cat-count"> 1 </small>
+												  </span>
+											  </a>
+										  </div>
+									  </div>
+								  </div>
+								  <div id="location_" class=" grid-sort-container isotope no_margin-container with-excerpt-container grid-total-even grid-col-3 grid-links-" data-portfolio-id="1">
+								  {% for l in locations %}
+									  <div data-ajax-id="{{l.data_ajax_id}}" class=" grid-entry flex_column isotope-item all_sort no_margin post-entry post-entry-{{l.data_ajax_id}} grid-entry-overview grid-loop-{{forloop.counter}} grid-parity-{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}  south-suburbs_sort  {{l.south_suburbs_sort}} default_av_fullwidth ">
+										  <article class="main_color inner-entry" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+											  <a href="{{ l.get_absolute_url }}" title="South Chicago Heights" data-rel="grid-1" class="grid-image avia-hover-fx">
+												  <img width="1500" height="630" src="{{l.image.url}}" class="attachment-featured_large size-featured_large wp-post-image" alt="location"
+													   srcset="{{l.image.url}}",/>
+											  </a>
+											  <div class="grid-content">
+												  <div class="avia-arrow"></div>
+												  <header class="entry-content-header">
+													  <h3 class="grid-entry-title entry-title" itemprop="headline">
+														  <a href="{{ l.get_absolute_url }}" title="South Chicago Heights">{{l.location_heading}}</a>
+													  </h3>
+												  </header>
+												  <div class="grid-entry-excerpt entry-content" itemprop="text">
+													  {{l.location_info}}<br><br><br>
+												  </div>
+											  </div>
+											  <footer class="entry-footer"></footer>
+										  </article>
+									  </div>
+								  {% endfor %}
+								  </div>
+							  </div>
+						  </div>
+					  </div><!-- close content main div -->
+				  </div>
+				  <div class="av-extra-border-element border-extra-arrow-down">
+					  <div class="av-extra-border-outer">
+						  <div class="av-extra-border-inner" style="background-color:#f5f5f5;"></div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <div id="contact" class="avia-section main_color avia-section-default avia-shadow avia-full-stretch av-parallax-section av-section-color-overlay-active avia-bg-style-parallax  avia-builder-el-6  el_after_av_section  avia-builder-el-last  av-minimum-height av-minimum-height-100 container_wrap fullsize" data-section-bg-repeat="stretch">
+			  <div class="av-parallax" data-avia-parallax-ratio="0.3">
+				  <div class="av-parallax-inner main_color  avia-full-stretch" style="background-repeat: no-repeat;
+				   background-image: url({{company_obj.background_currency_image.url}}); background-attachment: scroll; background-position: top center; ">
+				  </div>
+			  </div>
+			  <div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay" style="opacity: 0.5; background-color: #b5b5b5; "></div>
+				  <div class="container">
+					  <div class="template-page content  av-content-full alpha units">
+						  <div class="post-entry post-entry-type-page post-entry-265">
+							  <div class="entry-content-wrapper clearfix">
+								  <div class="flex_column_table av-equal-height-column-flextable">
+									  <div class="flex_column av_two_fifth  flex_column_table_cell av-equal-height-column av-align-top first  avia-builder-el-7  el_before_av_three_fifth  avia-builder-el-first  " style="border-width:1px; border-color:#444444; border-style:solid; padding:20px 50px 20px 50px ; background-color:#333333; border-radius:0px; ">
+										  <div data-autoplay="true" data-interval="7" data-animation="slide" data-show_slide_delay="30" class="avia-content-slider-element-container avia-content-slider-element-slider avia-content-slider avia-smallarrow-slider avia-content-slider-active avia-content-slider1 avia-content-slider-odd  avia-builder-el-8  avia-builder-el-no-sibling  av_inherit_color" style=" color:#e0e0e0; ">
+											  <div class="avia-smallarrow-slider-heading  no-content-slider-heading ">
+												  <div class="new-special-heading">&nbsp;</div>
+												  <div class="avia-slideshow-arrows avia-slideshow-controls">
+													  <a href="#prev" class="prev-slide" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">Previous</a>
+													  <a href="#next" class="next-slide" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">Next</a>
+												  </div>
+											  </div>
+											  <div class="avia-content-slider-inner">
+												  {% for currency in currencies %}
+												  <div class="slide-entry-wrap">
+													  <section class="slide-entry flex_column post-entry slide-entry-overview slide-loop-{{currency.currency_loop}} slide-parity-odd  av_fullwidth first" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+														  <div class="slide-entry-excerpt entry-content" itemprop="text">
+															  <h2 style="text-align: center;">
+																  <img class="aligncenter size-full wp-image-{{currency.image_id}}" src="{{currency.image.url}}" alt="Illinois license plate services" width="250" height="149"/>
+																  {{currency.currency_header}}</h2>
+															  <p style="text-align: center;">{{currency.currency_description}}</p>
+															  {% if  currency.id == 1 %}
+															  <div style="font-size: 11px; font-weight: bold; line-height: 150%; max-width: 300px; margin: auto; text-align: center;">
+																  <a title="103rd &amp; Western" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/Locations/103rd-western/">103rd &amp; Western</a>
+																  — <a title="Oak Park and Belmont" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/oak-park-belmont-2/">Oak Park &amp; Belmont</a>
+																  — <a title="Sibley Blvd at the Calumet Expwy" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/sibley-blvd-at-the-calumet-expwy/">Sibley Blvd &amp; Calumet Expressway</a>
+																  — <a title="147th &amp; Halsted" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/location/147th-halsted/">147th &amp; Halsted</a>
+																  — <a title="147th &amp; Dixie Hwy." href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/147th-dixie-hwy/">147th &amp; Dixie Highway</a>
+															  </div>
+															  {% endif %}
+														  </div>
+													  </section>
+												  </div>
+												  {% endfor %}
+
+											  </div>
+										  </div>
+									  </div>
+
+									  <div class="av-flex-placeholder"></div>
+									  <div class="flex_column av_three_fifth  flex_column_table_cell av-equal-height-column av-align-top   avia-builder-el-9  el_after_av_two_fifth  avia-builder-el-last  " style="padding:-5px 33px 33px 33px ; border-radius:0px; ">
+										  <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+											  <div class="avia_textblock " style="font-size:13px; " itemprop="text">
+												  <p style="text-align: center; border-color: #e1e1e1; border-radius: 2px; background-color: #fcfcfc; color: #919191; padding: 13px; padding-top: 40px; padding-bottom: 40px; font-weight: bold;">
+													  <span class="av_font_icon avia_animate_when_visible av-icon-style-  av-no-color avia-icon-pos-center " style="">
+														  <span class="av-icon-char" style="font-size:40px;line-height:40px;" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">
+														  </span>
+													  </span>
+												  </p>
+											  </div>
+										  </section>
+										  <form action="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/" method="post" class="avia_ajax_form av-form-labels-hidden   avia-builder-el-12  el_after_av_textblock  avia-builder-el-last  av-centered-form  " data-avia-form-id="1" data-avia-redirect="">
+											  <fieldset>
+												  <p class=" first_form  form_element form_element_half" id="element_avia_1_1">
+													  <input name="avia_1_1" class="text_input is_empty" type="text" id="avia_1_1" value="" placeholder="Name*"/>
+												  </p>
+												  <p class=" form_element form_element_half" id="element_avia_2_1">
+													  <input name="avia_2_1" class="text_input is_email" type="text" id="avia_2_1" value="" placeholder="E-Mail*"/>
+												  </p>
+												  <p class=" first_form  form_element form_fullwidth av-last-visible-form-element" id="element_avia_3_1">
+													  <textarea placeholder="Message*" name="avia_3_1" class="text_area is_empty" cols="40" rows="7" id="avia_3_1">
+													  </textarea>
+												  </p>
+												  <p class="hidden">
+													  <input type="text" name="avia_4_1" class="hidden " id="avia_4_1" value=""/>
+												  </p>
+												  <p class="form_element ">
+													  <input type="hidden" value="1" name="avia_generated_form1"/>
+													  <input type="submit" value="Submit" class="button" data-sending-label="Sending"/>
+												  </p>
+											  </fieldset>
+										  </form>
+										  <div id="ajaxresponse_1" class="ajaxresponse ajaxresponse_1 hidden"></div>
+									  </div>
+								  </div><!--close column table wrapper. Autoclose:  -->
+							  </div>
+						  </div>
+					  </div><!-- close content main div --> <!-- section close by builder template -->
+				  </div>
+			  </div><!--end builder template-->
+		  </div><!-- close default .container_wrap element -->
+{% endblock %}
+
+ {% block domready %}
+  {% endblock %}
