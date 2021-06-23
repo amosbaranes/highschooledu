@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CheckCashingWeb, Location, Currency, Partner, Service
+from .models import CheckCashingWeb, Location, Currency, Partner, Service, ContactUsMessages, LocationRegion
 
 
 @admin.register(CheckCashingWeb)
@@ -9,7 +9,7 @@ class CheckCashingWebAdmin(admin.ModelAdmin):
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'order', 'location_heading', 'location_info',)
+    list_display = ('id', 'order', 'location_heading')
 
 
 @admin.register(Currency)
@@ -25,3 +25,14 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('id', 'order', 'title', 'description')
+
+
+@admin.register(ContactUsMessages)
+class ContactUsMessagesAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'email',)
+
+
+@admin.register(LocationRegion)
+class LocationRegionAdmin(admin.ModelAdmin):
+    list_display = ('id', 'region_title',)
+

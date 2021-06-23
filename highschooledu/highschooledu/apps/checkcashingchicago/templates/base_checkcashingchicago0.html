@@ -9,75 +9,19 @@
   {% block style %} {% endblock %}
   {% block scripts %} {% endblock %}
   {% render_block "css" %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
   {% block body %}
   {% endblock %}
 
   <div id="wrap_all">
-  <header id="header" class=" header_color dark_bg_color  av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking_disabled av_header_stretch_disabled av_mobile_menu_phone av_header_transparency av_header_searchicon_disabled av_header_unstick_top_disabled av_seperator_big_border av_bottom_nav_disabled " role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
-		  <a id="advanced_menu_toggle" href="#" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
-		  <a id="advanced_menu_hide" href="#" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
-		  <div id="header_main" class="container_wrap container_wrap_logo">
-			  <div class="container av-logo-container">
-				  <div class="inner-container">
-					  <strong class="logo">
-						  <a href="/">
-							  <img height="100" width="300"
-							  src="{{ company_obj.logo_image.url }}" alt="Chicago Financial Enterprise"/>
-						  </a>
-					  </strong>
-					  <nav class="main_menu" data-selectname="Select a page" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-						  <div class="avia-menu av-main-nav-wrap">
-							  <ul id="avia-menu" class="menu av-main-nav">
-								  <li id="menu-item-270" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-homemenu-item-top-level menu-item-top-level-1">
-									  <a href="#about" itemprop="url">
-										  <span class="avia-bullet"></span>
-										  <span class="avia-menu-text">About</span>
-										  <span class="avia-menu-fx">
-											  <span class="avia-arrow-wrap">
-												  <span class="avia-arrow"></span>
-											  </span>
-										  </span>
-									  </a>
-								  </li>
-								  <li id="menu-item-271" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-homemenu-item-top-level menu-item-top-level-2">
-									  <a href="#locations" itemprop="url">
-										  <span class="avia-bullet"></span>
-										  <span class="avia-menu-text">Locations</span>
-										  <span class="avia-menu-fx">
-											  <span class="avia-arrow-wrap">
-												  <span class="avia-arrow"></span>
-											  </span>
-										  </span>
-									  </a>
-								  </li>
-								  <li id="menu-item-333" class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-homemenu-item-top-level menu-item-top-level-3">
-									  <a href="#contact" itemprop="url">
-										  <span class="avia-bullet"></span>
-										  <span class="avia-menu-text">Contact</span>
-										  <span class="avia-menu-fx">
-											  <span class="avia-arrow-wrap">
-												  <span class="avia-arrow"></span>
-											  </span>
-										  </span>
-									  </a>
-								  </li>
-							  </ul>
-						  </div>
-					  </nav>
-				  </div>
-			  </div><!-- end container_wrap-->
-		  </div>
-		  <div class="header_bg"></div>
-		  <!-- end header -->
-	  </header>
 	  <div id="main" data-scroll-offset="88">
-  {% block body_content %}
-  {% endblock %}
+        {% block body_content %}
+        {% endblock %}
 	 </div><!-- end wrap_all -->
-
-  <div class="container_wrap footer_color" id="footer">
+	  <div class="container_wrap footer_color" id="footer">
 			  <div class="container">
 				  <div class="flex_column   first el_before_">
 					  <section id="text-2" class="widget clearfix widget_text">
@@ -86,7 +30,7 @@
 							  <div style="text-align: center;">
 								  {% for partner in partners %}
 								  <div style="display: inline-block; padding: 15px;{% if  partner.id == 4 %} position: relative; top: 24px;{% endif %}">
-									  <a href="#" target="_blank">
+									  <a href="{{partner.partner_link}}" target="_blank">
 										  <img class="aligncenter wp-image-{{partner.image_id}}"
 											   src="{{partner.partner_image.url}}" alt="cce" width="{{partner.image_width}}" height="90"/>
 										  {% if partner.id == 4 %}
@@ -103,14 +47,14 @@
 				  </div>
 			  </div><!-- ####### END FOOTER CONTAINER ####### -->
 		  </div>
-  <footer class="container_wrap socket_color" id="socket" role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+	  <footer class="container_wrap socket_color" id="socket" role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
 			  <div class="container">
-				  <span class="copyright">© Copyright {{ company_obj.copy_right_year}} - {{company_obj.}}  </span>
+				  <span class="copyright">© Copyright {{ company_obj.copy_right_year}} - {{company_obj.footer_main_title}}  </span>
 				  <nav class="sub_menu_socket" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 					  <div class="avia3-menu">
 						  <ul id="avia3-menu" class="menu">
 							  <li id="menu-item-268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1">
-								  <a href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/members-area/" itemprop="url">
+								  <a href="{% url 'checkcashingchicago:members_area_detail' %}" itemprop="url">
 									  <span class="avia-bullet"></span>
 									  <span class="avia-menu-text">Member&#8217;s Area</span>
 									  <span class="avia-menu-fx">
@@ -147,12 +91,18 @@
 				  </nav>
 			  </div><!-- ####### END SOCKET CONTAINER ####### -->
 		  </footer><!-- end main -->
-
-  <a href="#top" title="Scroll to top" id="scroll-top-link" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">
-	  <span class="avia_hidden_link_text">Scroll to top</span>
-  </a>
-  <div id="fb-root"></div>
+	       <a href="#top" title="Scroll to top" id="scroll-top-link" aria-hidden="true" data-av_iconfont="entypo-fontello">
+		     <i class="fa fa-angle-up"></i>
+		  <span class="avia_hidden_link_text">Scroll to top</span>
+	      </a>
+<!--	  <a href="#top" title="Scroll to top" id="scroll-top-link" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">-->
+<!--		  <span class="avia_hidden_link_text">Scroll to top</span>-->
+<!--	  </a>-->
+	  <div id="fb-root"></div>
   </div>
+
+
+
 <!--
      FILE ARCHIVED ON 03:59:27 Aug 05, 2018 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 06:27:54 Jun 17, 2021.

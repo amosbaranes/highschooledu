@@ -242,3 +242,11 @@ ELASTICSEARCH_DSL = {
     },
 }
 
+
+#
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'amos@DrBaranes.com'
+EMAIL_HOST_PASSWORD = 'Amos122#'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# ---

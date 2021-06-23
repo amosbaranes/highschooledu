@@ -20,6 +20,7 @@ class CheckCashingWeb(models.Model):
     background_location_image = models.ImageField(upload_to='location/', blank=True, null=True)
     background_currency_image = models.ImageField(upload_to='currency/', blank=True, null=True)
     main_title = models.CharField(max_length=100, null=True)
+    footer_main_title = models.CharField(max_length=100, null=True)
     main_sub_title = models.CharField(max_length=100, null=True)
     location_title = models.CharField(max_length=100, null=True)
     partner_title = models.CharField(max_length=100, null=True)
@@ -27,9 +28,31 @@ class CheckCashingWeb(models.Model):
     check_cashing_application = models.FileField(upload_to='checkcashing/', blank=True, null=True)
     application_for_employment = models.FileField(upload_to='checkcashing/', blank=True, null=True)
     copy_right_year = models.CharField(max_length=4, null=True)
+    contact_us_email = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.name
+
+
+class LocationRegion(models.Model):
+
+    class Meta:
+        verbose_name = _('location_region')
+        verbose_name_plural = _('location_regions')
+        ordering = ['order']
+
+    check_cashing_web = models.ForeignKey(CheckCashingWeb, on_delete=models.CASCADE, related_name='location_regions')
+    order = models.IntegerField(default=1000, blank=True)
+    region_title = models.CharField(max_length=100, null=True)
+    slug = models.SlugField(max_length=250, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.region_title)
+        super(LocationRegion, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.region_title
 
 
 class Location(models.Model):
@@ -39,14 +62,23 @@ class Location(models.Model):
         verbose_name_plural = _('locations')
         ordering = ['order']
 
-    check_cashing_web = models.ForeignKey(CheckCashingWeb, on_delete=models.CASCADE, default=1,
+    check_cashing_web = models.ForeignKey(CheckCashingWeb, on_delete=models.CASCADE,
                                           related_name='locations')
+    region = models.ForeignKey(LocationRegion, on_delete=models.CASCADE, blank=True, null=True,
+                               related_name='region_locations')
     order = models.IntegerField(default=1000, blank=True)
     image = models.ImageField(upload_to='location/', blank=True, null=True)
     location_heading = models.CharField(max_length=100, null=True)
-    location_info = models.CharField(max_length=300, null=True)
+    location_detail_title = models.CharField(max_length=100, null=True)
+    address1 = models.CharField(max_length=50, null=True)
+    address2 = models.CharField(max_length=50, null=True)
+    address3 = models.CharField(max_length=50, null=True)
+    address4 = models.CharField(max_length=50, null=True)
+    working_hours1 = models.CharField(max_length=50, blank=True, null=True)
+    working_hours2 = models.CharField(max_length=50, blank=True, null=True)
+    working_hours3 = models.CharField(max_length=50, blank=True, null=True)
+    working_hours4 = models.CharField(max_length=50, blank=True, null=True)
     data_ajax_id = models.IntegerField(default=0)
-    south_suburbs_sort = models.CharField(max_length=20, null=True)
     is_active = models.BooleanField(default=True)
     slug = models.SlugField(max_length=250, null=True)
 
@@ -105,6 +137,23 @@ class Partner(models.Model):
     order = models.IntegerField(default=1000, blank=True)
     partner_image = models.ImageField(upload_to='partner/', blank=True, null=True)
     partner_description = models.CharField(max_length=100, null=True)
+    partner_link = models.CharField(max_length=100, null=True)
     image_id = models.IntegerField(default=0)
     image_width = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
+
+
+class ContactUsMessages(models.Model):
+
+    class Meta:
+        verbose_name = _('contact_us_message')
+        verbose_name_plural = _('contact_us_messages')
+
+    check_cashing_web = models.ForeignKey(CheckCashingWeb, on_delete=models.CASCADE, default=1,
+                                          related_name='messages')
+
+    name = models.CharField(max_length=100, null=True)
+    email = models.CharField(max_length=100, null=True)
+    message = models.TextField(null=True)
+
+
