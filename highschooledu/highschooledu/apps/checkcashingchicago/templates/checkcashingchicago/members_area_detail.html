@@ -13,7 +13,7 @@
 
     {% block body_content %}
     <div id="wrap_all">
-   <header id="header" class=" header_color dark_bg_color  av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking_disabled av_header_stretch_disabled av_mobile_menu_phone av_header_searchicon_disabled av_header_unstick_top_disabled av_seperator_big_border av_bottom_nav_disabled " role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+     <header id="header" class=" header_color dark_bg_color  av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking_disabled av_header_stretch_disabled av_mobile_menu_phone av_header_searchicon_disabled av_header_unstick_top_disabled av_seperator_big_border av_bottom_nav_disabled " role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
        <a id="advanced_menu_toggle" href="#" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
        <a id="advanced_menu_hide" href="#" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></a>
        <div id="header_main" class="container_wrap container_wrap_logo">
@@ -27,7 +27,7 @@
                        <div class="avia-menu av-main-nav-wrap">
                            <ul id="avia-menu" class="menu av-main-nav">
                                <li id="menu-item-270" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-top-level menu-item-top-level-1">
-                                   <a href="#about" itemprop="url">
+                                   <a href="{% url 'checkcashingchicago:home' %}#about" itemprop="url">
                                        <span class="avia-bullet"></span>
                                        <span class="avia-menu-text">About</span>
                                        <span class="avia-menu-fx">
@@ -38,7 +38,7 @@
                                    </a>
                                </li>
                                <li id="menu-item-271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-top-level menu-item-top-level-2">
-                                   <a href="#locations" itemprop="url">
+                                   <a href="{% url 'checkcashingchicago:home' %}#locations" itemprop="url">
                                        <span class="avia-bullet"></span>
                                        <span class="avia-menu-text">Locations</span>
                                        <span class="avia-menu-fx">
@@ -49,7 +49,7 @@
                                    </a>
                                </li>
                                <li id="menu-item-333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-top-level menu-item-top-level-3">
-                                   <a href="#contact" itemprop="url">
+                                   <a href="{% url 'checkcashingchicago:home' %}#contact" itemprop="url">
                                        <span class="avia-bullet"></span>
                                        <span class="avia-menu-text">Contact</span>
                                        <span class="avia-menu-fx">
@@ -67,7 +67,7 @@
        </div>
        <div class="header_bg"></div><!-- end header -->
    </header>
-   </div>
+    </div>
     <div id="main" data-scroll-offset="88">
 		<div class="container_wrap container_wrap_first main_color fullsize">
 			<div class="container">
@@ -75,12 +75,14 @@
 					<article class="post-entry post-entry-type-page post-entry-96" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 						<div class="entry-content-wrapper clearfix">
 							<header class="entry-content-header"></header>
-							<div style="margin-top:90px" class="entry-content" itemprop="text">
-								<form action="https://web.archive.org/web/20180817113521/http://checkcashingchicago.com/wp-login.php?action=postpass" class="post-password-form" method="post">
+							<div style="margin-top:90px" class="entry-content" itemprop="text" id="container_">
+								<form action="" class="post-password-form" method="post">
                                     <p>This content is password protected. To view it please enter your password below:</p>
 									<p>
-										<label for="pwbox-96">Password: <input name="post_password" id="pwbox-96" type="password" size="20"/></label>
-										<input type="submit" name="Submit" value="Enter"/>
+										<label for="pwbox-96">Password:
+                                            <input name="post_password" id="pwbox-96" type="password" size="20"/></label>
+										<input type="button" name="Submit" value="Enter"
+                                               company_id="{{company_obj.id}}" onclick="check_password(event)"/>
 									</p>
 								</form>
 							</div>
@@ -93,4 +95,35 @@
 		</div><!-- close default .container_wrap element -->
         <!-- end main -->
 	</div>
+    <script>
+        function check_password(event)
+        {
+         elm = event.target
+         input = document.getElementById("pwbox-96")
+         password_ = input.value
+         company_id_ = elm.getAttribute("company_id")
+
+  $.post("{% url 'checkcashingchicago:post_password'%}",
+    {
+      company_id : company_id_,
+      pass_word : password_
+    },
+    function(data){
+     try {
+      if (data['status'])
+      {
+       alert(data['status'])
+      } else
+      {
+        var elm_container = document.getElementById('container_')
+        elm_container.innerHTML = data
+      }
+     } catch (err) {alert(err)}
+
+    }
+  ).fail(function(error) { alert(error.responseJSON) });
+
+
+        }
+    </script>
     {% endblock %}

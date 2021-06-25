@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import CheckCashingWeb, Location, Currency, Partner, Service, ContactUsMessages, LocationRegion
+from .models import (CheckCashingWeb, Location, Currency, Partner, Service, ContactUsMessages,
+                     DocumentCategory, Document, LocationRegion)
 
 
 @admin.register(CheckCashingWeb)
@@ -36,3 +37,14 @@ class ContactUsMessagesAdmin(admin.ModelAdmin):
 class LocationRegionAdmin(admin.ModelAdmin):
     list_display = ('id', 'region_title',)
 
+
+@admin.register(DocumentCategory)
+class DocumentCategoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'check_cashing_web')
+    list_filter = ('check_cashing_web', )
+
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'category')
+    list_filter = ('category', )

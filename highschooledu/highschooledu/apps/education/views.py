@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from .models import Phrase, AdditionalTopic, Course
 
 
+
 def institution(request, model=''):
     try:
         wsc = WebSiteCompany(request)

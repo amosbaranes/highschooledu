@@ -6,6 +6,8 @@ from ..webcompanies.WebCompanies import WebSiteCompany
 from django.http import JsonResponse
 from .models import CheckCashingWeb
 from .models import Currency, Partner, Location, ContactUsMessages
+from django.urls import reverse
+from django.shortcuts import redirect
 
 
 def check_cashing(request, model=''):
@@ -76,6 +78,18 @@ def members_area_detail(request):
                                                                             'partners': partners,
                                                                             })
 
+
+def post_password(request):
+    company_obj = check_cashing(request)
+    pass_word_ = request.POST.get('pass_word')
+    members_password_ = company_obj.members_password
+
+    if pass_word_ != members_password_:
+        print('ko')
+        rr = {'status': 'Wrong Password!'}
+        return JsonResponse(rr)
+
+    return render(request, 'checkcashingchicago/members_area_doc.html', {'company_obj': company_obj})
 
 
 # not used we should delete it

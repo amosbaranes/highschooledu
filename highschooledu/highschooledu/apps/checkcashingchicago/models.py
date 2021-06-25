@@ -29,6 +29,7 @@ class CheckCashingWeb(models.Model):
     application_for_employment = models.FileField(upload_to='checkcashing/', blank=True, null=True)
     copy_right_year = models.CharField(max_length=4, null=True)
     contact_us_email = models.CharField(max_length=100, null=True)
+    members_password = models.CharField(max_length=100, default='101')
 
     def __str__(self):
         return self.name
@@ -157,3 +158,30 @@ class ContactUsMessages(models.Model):
     message = models.TextField(null=True)
 
 
+class DocumentCategory(models.Model):
+
+    class Meta:
+        verbose_name = _('document_category')
+        verbose_name_plural = _('document_categories')
+
+    check_cashing_web = models.ForeignKey(CheckCashingWeb, on_delete=models.CASCADE, default=1,
+                                          related_name='document_categories')
+    name = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Document(models.Model):
+
+    class Meta:
+        verbose_name = _('document')
+        verbose_name_plural = _('documents')
+
+    category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE, default=1,
+                                 related_name='category_documents')
+    name = models.CharField(max_length=100, null=True)
+    file = models.FileField(upload_to='checkcashing/documents', blank=True, null=True)
+
+    def __str__(self):
+        return self.name

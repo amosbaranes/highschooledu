@@ -151,7 +151,6 @@
 												  <img width="1500" height="630" src="{{l.image.url}}" class="attachment-featured_large size-featured_large wp-post-image" alt="location"
 													   srcset="{{l.image.url}}"/>
 											  </a>
-
 											  <div class="grid-content">
 												  <div class="avia-arrow"></div>
 												  <header class="entry-content-header">
@@ -200,7 +199,7 @@
 												  <div class="new-special-heading">&nbsp;</div>
 												  <div class="avia-slideshow-arrows avia-slideshow-controls">
 													  <a href="#prev" class="prev-slide" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">Previous</a>
-													  <a href="#next" class="next-slide" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">Next</a>
+                                                      <a href="#next" class="next-slide" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello">Next</a>
 												  </div>
 											  </div>
 											  <div class="avia-content-slider-inner">
@@ -214,11 +213,13 @@
 															  <p style="text-align: center;">{{currency.currency_description}}</p>
 															  {% if  currency.id == 1 %}
 															  <div style="font-size: 11px; font-weight: bold; line-height: 150%; max-width: 300px; margin: auto; text-align: center;">
-																  <a title="103rd &amp; Western" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/Locations/103rd-western/">103rd &amp; Western</a>
-																  — <a title="Oak Park and Belmont" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/oak-park-belmont-2/">Oak Park &amp; Belmont</a>
-																  — <a title="Sibley Blvd at the Calumet Expwy" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/sibley-blvd-at-the-calumet-expwy/">Sibley Blvd &amp; Calumet Expressway</a>
-																  — <a title="147th &amp; Halsted" href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/location/147th-halsted/">147th &amp; Halsted</a>
-																  — <a title="147th &amp; Dixie Hwy." href="https://web.archive.org/web/20180805035927/http://checkcashingchicago.com/locations/147th-dixie-hwy/">147th &amp; Dixie Highway</a>
+																  <ul>
+																  {% for location in company_obj.locations.all %}
+																	  <li>
+																		  <a title="{{location.location_heading}}" href="{{ location.get_absolute_url }}" target="_blank">{{location.location_heading}}</a>
+																	  </li>
+																  {% endfor %}
+																  </ul>
 															  </div>
 															  {% endif %}
 														  </div>
@@ -236,7 +237,7 @@
 											  <div class="avia_textblock " style="font-size:13px; " itemprop="text">
 												  <p style="text-align: center; border-color: #e1e1e1; border-radius: 2px; background-color: #fcfcfc; color: #919191; padding: 13px; padding-top: 40px; padding-bottom: 40px; font-weight: bold;">
 													  <span class="av_font_icon avia_animate_when_visible av-icon-style-  av-no-color avia-icon-pos-center " style="">
-														  <i class="fa fa-envelope" style="font-size:30px"></i>
+														  <i class="fa fa-envelope" style="font-size:36px"></i>
 
 														  </span>
 													  </span>
@@ -303,6 +304,4 @@
 
 
   {% block domready %}
-
-
   {% endblock %}
