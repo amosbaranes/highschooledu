@@ -7,145 +7,139 @@
 
 
 {% block body_content %}
-    <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
-                <div class="hero-intro__inner">
-                    <div class="hero-intro__body">
-                        <div class="hero-intro__content">
-                            <h1 class="hero-intro__title">
-                                <strong>{{institution_obj.institution_name}}</strong>
-                            </h1>
-                            <p>{{institution_obj.welcome_phrase}}</p>
-                        </div>
-                        <div class="hero-intro__search">
-                            <p class="hero-intro__search-title">Search in our courses</p>
-                            <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'>
-                                <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
-                                <div class="search-input">
-                                    <input id="search_input" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1"
-                                           class="react-autosuggest__input" placeholder="Search for courses" value="">
-                                    <button class="search-input__btn"
-                                        onclick="search(event)">
-                                        <svg aria-hidden="true" role="img" class="icon search-input__btn__icon"><use xlink:href="#icon-magnifying-glass"></use></svg>
-                                        <span class="offscreen">Search</span>
-                                    </button>
-                                </div>
-                                    <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container">
-                                    </div>
+        <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
+            <div class="hero-intro__inner">
+                <div class="hero-intro__body">
+                    <div class="hero-intro__content">
+                        <h1 class="hero-intro__title">
+                            <strong>{{institution_obj.institution_name}}</strong>
+                        </h1>
+                        <p>{{institution_obj.welcome_phrase}}</p>
+                    </div>
+                    <div class="hero-intro__search">
+                        <p class="hero-intro__search-title">Search in our courses</p>
+                        <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'>
+                            <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
+                            <div class="search-input">
+                                <input id="search_input" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1"
+                                       class="react-autosuggest__input" placeholder="Search for courses" value="">
+                                <button class="search-input__btn"
+                                    onclick="search(event)">
+                                    <svg aria-hidden="true" role="img" class="icon search-input__btn__icon"><use xlink:href="#icon-magnifying-glass"></use></svg>
+                                    <span class="offscreen">Search</span>
+                                </button>
+                            </div>
+                                <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container">
                                 </div>
                             </div>
-                            <a class="hero-intro__cta" href="/en/courses/">Explore our catalog</a>
+                        </div>
+                        <a class="hero-intro__cta" href="/en/courses/">Explore our catalog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section ">
+            <div class="section__row">
+                <h2 class="section__title">Popular courses</h2>
+                <div id="courses_" class="section__items">
+
+
+
+                    <div id="more_courses_btn" class="button-caesura">
+                        <a href="/en/courses/">More courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <h2 class="section__title">Last news</h2>
+                <div id="news_" class="section__items">
+
+
+
+                    <div id="more_news_btn" class="button-caesura">
+                        <a href="/en/news/">More news</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <h2 class="section__title">Programs</h2>
+                <div id="program_" class="section__items">
+
+                    <div id="more_program_btn" class="button-caesura">
+                        <a href="/en/programs/">More programs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <h2 class="section__title">Subjects</h2>
+                <div id="subject_" class="section__items">
+
+                    <div id="more_subject_btn" class="button-caesura">
+                        <a href="/en/categories/">More subjects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <h2 class="section__title">Persons</h2>
+                <div id="person_" class="section__items">
+
+
+                    <div id="more_person_btn" class="button-caesura">
+                        <a href="/en/persons/">More persons</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <div class="section__items">
+                    {% for phrase in phrases %}
+                    <div class="glimpse-quote">
+                        <div class="glimpse-quote__wrapper">
+                            <div class="glimpse-quote__media">
+                                <img src="{{ phrase.image.url }}"
+                                     srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
+                            </div>
+                        </div>
+                        <div class="glimpse-quote__content">
+                            <svg role="img"><use href="#icon-quote" /></svg>
+                            <p>{{phrase.persons_phrase}}</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-    <section class="section ">
-        <div class="section__row">
-            <h2 class="section__title">Popular courses</h2>
-            <div id="courses_" class="section__items">
-
-
-
-                <div id="more_courses_btn" class="button-caesura">
-                    <a href="/en/courses/">More courses</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <h2 class="section__title">Last news</h2>
-            <div id="news_" class="section__items">
-
-
-
-                <div id="more_news_btn" class="button-caesura">
-                    <a href="/en/news/">More news</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <h2 class="section__title">Programs</h2>
-            <div id="program_" class="section__items">
-
-                <div id="more_program_btn" class="button-caesura">
-                    <a href="/en/programs/">More programs</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <h2 class="section__title">Subjects</h2>
-            <div id="subject_" class="section__items">
-
-                <div id="more_subject_btn" class="button-caesura">
-                    <a href="/en/categories/">More subjects</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <h2 class="section__title">Persons</h2>
-            <div id="person_" class="section__items">
-
-
-                <div id="more_person_btn" class="button-caesura">
-                    <a href="/en/persons/">More persons</a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <div class="section__items">
-                {% for phrase in phrases %}
-                <div class="glimpse-quote">
-                    <div class="glimpse-quote__wrapper">
-                        <div class="glimpse-quote__media">
-                            <img src="{{ phrase.image.url }}"
-                                 srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
+        </section>
+        <section class="section ">
+            <div class="section__row">
+                <div class="section__items">
+                     {% for topic in topics %}
+                 <div class="glimpse-card_square">
+                        <div class="glimpse-card_square__media">
+                            <img src="{{topic.image.url }}"
+                             srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
+                        </div>
+                        <div class="glimpse-card_square__wrapper">
+                            <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
                         </div>
                     </div>
-                    <div class="glimpse-quote__content">
-                        <svg role="img"><use href="#icon-quote" /></svg>
-                        <p>{{phrase.persons_phrase}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <section class="section ">
-        <div class="section__row">
-            <div class="section__items">
-                 {% for topic in topics %}
-             <div class="glimpse-card_square">
-                    <div class="glimpse-card_square__media">
-                        <img src="{{topic.image.url }}"
-                         srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
-                    </div>
-                    <div class="glimpse-card_square__wrapper">
-                        <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
-                    </div>
-                </div>
 
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
-    </section>
+        </section>
 {% endblock %}
-
-{% block content %}
-   {% placeholder "header" %}
-   {% placeholder "content" %}
-{% endblock content %}
-
 
   {% block js %}
         <script>

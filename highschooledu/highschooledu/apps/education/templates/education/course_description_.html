@@ -7,9 +7,12 @@
 {% endblock%}
 
 {% block body_content %}
+
 <h1 style="color:blue">{% render_model course "course_name" %}</h1><br>
-<!--<img width="200px" height="160px" src="{{course.image.url}}">-->
+<img width="200px" height="160px" src="{{course.image.url}}">
+
 {% render_placeholder course.description %}
+
 {% endblock%}
 
 

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import InstitutionWeb, Course, New, Program, Subject, Person, Phrase, AdditionalTopic
+from cms.admin.placeholderadmin import PlaceholderAdminMixin
 
 
 @admin.register(InstitutionWeb)
@@ -8,7 +9,7 @@ class InstitutionWebAdmin(admin.ModelAdmin):
 
 
 @admin.register(Course)
-class CourseAdmin(admin.ModelAdmin):
+class CourseAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
     list_display = ('id', 'order', 'course_name', 'course_date', 'is_popular', 'is_active', )
     list_filter = ('is_active', 'is_popular', )
 

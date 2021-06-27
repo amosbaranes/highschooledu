@@ -1,0 +1,577 @@
+{% extends "base_education.html" %}
+{% load static i18n cms_tags menu_tags sekizai_tags thumbnail %}
+
+{% block title %}
+<title>{{ company_obj.company_name }}</title>
+{% endblock%}
+
+
+{% block body_content %}
+    <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
+                <div class="hero-intro__inner">
+                    <div class="hero-intro__body">
+                        <div class="hero-intro__content">
+                            <h1 class="hero-intro__title">
+                                <strong>{{institution_obj.institution_name}}</strong>
+                            </h1>
+                            <p>{{institution_obj.welcome_phrase}}</p>
+                        </div>
+                        <div class="hero-intro__search">
+                            <p class="hero-intro__search-title">Search in our courses</p>
+                            <div class="richie-react richie-react--root-search-suggest-field" data-props='{"courseSearchPageUrl": "/en/courses/"}'>
+                                <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container">
+                                <div class="search-input">
+                                    <input id="search_input" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1"
+                                           class="react-autosuggest__input" placeholder="Search for courses" value="">
+                                    <button class="search-input__btn"
+                                        onclick="search(event)">
+                                        <svg aria-hidden="true" role="img" class="icon search-input__btn__icon"><use xlink:href="#icon-magnifying-glass"></use></svg>
+                                        <span class="offscreen">Search</span>
+                                    </button>
+                                </div>
+                                    <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="hero-intro__cta" href="/en/courses/">Explore our catalog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <section class="section ">
+        <div class="section__row">
+            <h2 class="section__title">Popular courses</h2>
+            <div id="courses_" class="section__items">
+
+
+
+                <div id="more_courses_btn" class="button-caesura">
+                    <a href="/en/courses/">More courses</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <h2 class="section__title">Last news</h2>
+            <div id="news_" class="section__items">
+
+
+
+                <div id="more_news_btn" class="button-caesura">
+                    <a href="/en/news/">More news</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <h2 class="section__title">Programs</h2>
+            <div id="program_" class="section__items">
+
+                <div id="more_program_btn" class="button-caesura">
+                    <a href="/en/programs/">More programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <h2 class="section__title">Subjects</h2>
+            <div id="subject_" class="section__items">
+
+                <div id="more_subject_btn" class="button-caesura">
+                    <a href="/en/categories/">More subjects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <h2 class="section__title">Persons</h2>
+            <div id="person_" class="section__items">
+
+
+                <div id="more_person_btn" class="button-caesura">
+                    <a href="/en/persons/">More persons</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <div class="section__items">
+                {% for phrase in phrases %}
+                <div class="glimpse-quote">
+                    <div class="glimpse-quote__wrapper">
+                        <div class="glimpse-quote__media">
+                            <img src="{{ phrase.image.url }}"
+                                 srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
+                        </div>
+                    </div>
+                    <div class="glimpse-quote__content">
+                        <svg role="img"><use href="#icon-quote" /></svg>
+                        <p>{{phrase.persons_phrase}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section ">
+        <div class="section__row">
+            <div class="section__items">
+                 {% for topic in topics %}
+             <div class="glimpse-card_square">
+                    <div class="glimpse-card_square__media">
+                        <img src="{{topic.image.url }}"
+                         srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
+                    </div>
+                    <div class="glimpse-card_square__wrapper">
+                        <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+  {% block js %}
+        <script>
+            window.__richie_frontend_context__ = JSON.parse('{"context": {"csrftoken": "768IGrqrYPenfUujq5oHR37cYmw17KZbHxhX2QTj8PkvXmQxe6TVz7SlIgIpdIVw", "environment": "production", "release": "demo-1.9.0", "sentry_dsn": "https://b0ed6c7e47554152918928057029315c@sentry.io/1198559", "authentication": {"endpoint": "https://edx.richie.education", "backend": "openedx-hawthorn"}, "lms_backends": [{"endpoint": "https://edx.richie.education", "backend": "openedx-hawthorn", "course_regexp": "^.*/courses/(?<course_id>.*)/course/?$"}]}}');
+        </script>
+        <script src="{% static 'js/index.dc82dfe6f1fc.js' %}"></script>
+        <script>
+
+            function search(event)
+            {
+
+              elm = document.getElementById("search_input")
+              alert(elm.value)
+
+              var value = elm.value
+                try{
+                    $.post('{% url "search:search" %}',
+                      {
+                        q: value
+                      },
+                      function(data){
+                          alert(data['status'])
+                      });
+                  } catch(er){alert(er)}
+            }
+
+
+
+            function initializeHamburgerMenu() {
+                // Get all topbar burger elements
+                const topbarBurgers = Array.prototype.slice.call(
+                    document.querySelectorAll(".topbar__hamburger"), 0
+                );
+
+                // Check if there are any navbar burgers
+                if (topbarBurgers.length > 0) {
+                    // Add a click event on each of them
+                    topbarBurgers.forEach(function(el) {
+                        el.addEventListener("click", function() {
+                            // Get the target from the "data-target" attribute
+                            const target = document.getElementById(el.dataset.target);
+                            // Toggle the "is-active" class on both the burger and container
+                            el.classList.toggle("is-active");
+                            target.classList.toggle("is-open");
+                        });
+                    });
+                }
+            }
+
+            function initializeAccordions() {
+                // Implement accordion item behaviors
+                const $accordionItems = Array.prototype.slice.call(
+                    document.querySelectorAll('[data-accordion-button]'), 0
+                );
+
+                if ($accordionItems.length > 0) {
+                    $accordionItems.forEach(function(itemObject, itemIndex) {
+                        itemObject.addEventListener('click', function () {
+                            itemObject.closest('li').toggleAttribute('data-accordion-active');
+                            itemObject.toggleAttribute('data-accordion-open');
+                        });
+                    });
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                initializeAccordions();
+                initializeHamburgerMenu();
+            });
+        </script>
+  {% endblock %}
+
+  {% block domready %}
+
+var link_course = "{% url 'education:course_description' '1' %}"
+link_course = link_course.split('/')
+link_course.pop()
+link_course.pop()
+link_course = link_course.join('/')
+link_course += '/'
+
+        function make_course_template(k, course)
+        {
+            var a_ = document.createElement("a")
+            a_.setAttribute("class", "course-glimpse")
+            a_.setAttribute("href", link_course + k);
+            var div_ = document.createElement("div")
+            a_.appendChild(div_)
+            div_.setAttribute("class", "course-glimpse__media")
+            var img_ = document.createElement("img")
+            div_.appendChild(img_)
+            img_.setAttribute("src", course['image_url'])
+            img_.setAttribute("srcset", course['image_url'] + " 300w")
+            img_.setAttribute("sizes", "300px")
+            img_.setAttribute("alt", "")
+
+            var div1_ = document.createElement("div")
+            a_.appendChild(div1_)
+            div1_.setAttribute("class", "course-glimpse__content")
+            var div11_ = document.createElement("div")
+            div1_.appendChild(div11_)
+            div11_.setAttribute("class", "course-glimpse__wrapper")
+            var p_ = document.createElement("p")
+            div11_.appendChild(p_)
+            p_.setAttribute("class", "course-glimpse__title")
+            p_.innerHTML = course['course_name'];
+
+            var div111_ = document.createElement("div")
+            div11_.appendChild(div111_)
+            div111_.setAttribute("class", "course-glimpse__organization")
+            var svg_ = document.createElement("svg")
+            div111_.appendChild(svg_)
+            div111_.setAttribute("role", "img")
+            div111_.setAttribute("aria-hidden", "true")
+            div111_.setAttribute("class", "icon")
+            var use_ = document.createElement("use")
+            svg_.appendChild(use_)
+            use_.setAttribute("href", "#icon-pin")
+            var span_ = document.createElement("span")
+            div111_.appendChild(span_)
+            span_.innerHTML = course['short_description']
+            var div12_ = document.createElement("div")
+            div1_.appendChild(div12_)
+            div12_.setAttribute("class", "course-glimpse-footer")
+            var div121_ = document.createElement("div")
+            div12_.appendChild(div121_)
+            div121_.setAttribute("class", "course-glimpse-footer__date")
+            var svg1_ = document.createElement("svg")
+            div121_.appendChild(svg1_)
+            svg1_.setAttribute("role", "img")
+            svg1_.setAttribute("aria-hidden", "true")
+            svg1_.setAttribute("class", "icon")
+            var use1_ = document.createElement("use")
+            svg1_.appendChild(use1_)
+            use1_.setAttribute("href", "#icon-calendar")
+            div121_.innerHTML += course['course_date'];
+            return a_
+        }
+
+
+        /**
+         * Sort object properties (only own properties will be sorted).
+         * @param {object} obj object to sort properties
+         * @param {string|int} sortedBy 1 - sort object properties by specific value.
+         * @param {bool} isNumericSort true - sort object properties as numeric value, false - sort as string value.
+         * @param {bool} reverse false - reverse sorting.
+         * @returns {Array} array of items in [[key,value],[key,value],...] format.
+         */
+        function sortProperties(obj) {
+            var sortable = [];
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    sortable.push([key, obj[key]]);
+                }
+            }
+            sortable.sort(function (a, b) {
+                    var x = parseInt(a[1]['order']);
+                    var y = parseInt(b[1]['order']);
+                    return (x - y);
+                });
+return sortable
+}
+
+
+
+
+            function get_courses()
+            {
+                try{
+                    $.post('{% url "education:get_courses" %}',
+                      {
+                      },
+                      function(data){
+                            var courses_elm = document.getElementById("courses_")
+                            var more_courses_btn = document.getElementById("more_courses_btn")
+                        data = sortProperties(data)
+                        for (k in data)
+                        {
+                            course_elm = make_course_template(data[k][0], data[k][1])
+                            //alert(courses_elm.outerHTML)
+                            courses_elm.insertBefore(course_elm, more_courses_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_courses()
+
+
+        function make_news_template(news)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("href", "/en/news/triple-buffered-value-added-attitude/")
+                    a_.setAttribute("class", "blogpost-glimpse")
+                    var p_ = document.createElement("p")
+                    a_.appendChild(p_)
+                    p_.setAttribute("class", "blogpost-glimpse__date")
+                    p_.innerHTML=news['news_date'];
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class","blogpost-glimpse__media")
+                    var img_ = document.createElement("img")
+                    div_.appendChild(img_)
+                    img_.setAttribute("src", news['image_url'])
+                    img_.setAttribute("srcset", news['image_url'] + " 300w")
+                    img_.setAttribute("sizes", "300px")
+                    img_.setAttribute("alt", "")
+                    var div_1 = document.createElement("div")
+                    a_.appendChild(div_1)
+                    div_1.setAttribute("class", "blogpost-glimpse__content")
+                    div_2 = document.createElement("div")
+                    div_1.appendChild(div_2)
+                    div_2.setAttribute("class", "blogpost-glimpse__wrapper")
+                    div_3 = document.createElement("div")
+                    div_2.appendChild(div_3)
+                    div_3.setAttribute("class", "blogpost-glimpse__categories")
+                    var span_ = document.createElement("span")
+                    div_3.appendChild(span_)
+                    span_.setAttribute("class", "category-tag")
+                    var span_1 = document.createElement("span")
+                    span_.appendChild(span_1)
+                    span_1.setAttribute("class", "category-tag__title")
+                    span_1.innerHTML=news['news_type'];
+                    var span_2 = document.createElement("span")
+                    div_3.appendChild(span_2)
+                    span_2.innerHTML=news['news_type_description'];
+                    span_2.setAttribute("class", "category-tag__title")
+                    var p_1 = document.createElement("p")
+                    div_2.appendChild(p_1)
+                    p_1.setAttribute("class", "blogpost-glimpse__title")
+                    p_1.innerHTML= news['news_title'];
+                    var p_2 = document.createElement("p")
+                    div_2.appendChild(p_2)
+                    p_2.setAttribute("class", "blogpost-glimpse__excerpt")
+                    p_2.innerHTML=news['news_description'];
+                    return a_
+
+               }
+
+
+        function get_news()
+            {
+                try{
+                    $.post('{% url "education:get_news" %}',
+                      {
+                      },
+                      function(data){
+                        var new_elm = document.getElementById("news_")
+                        var more_news_btn = document.getElementById("more_news_btn")
+                        for (k in data)
+                        {
+                            news_elm = make_news_template(data[k])
+                            //alert(news_elm.outerHTML)
+                            new_elm.insertBefore(news_elm, more_news_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_news()
+
+         function make_program_template(programs)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("href", "/en/programs/synergistic-systemic-website/")
+                    a_.setAttribute("class", "program-glimpse program-glimpse--link")
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class", "program-glimpse__media")
+                    img_ = document.createElement("img")
+                    div_.appendChild(img_)
+                    img_.setAttribute("src", programs['image_url'])
+                    img_.setAttribute("srcset", programs['image_url'] + " 300w")
+                    img_.setAttribute("sizes", "300px")
+                    img_.setAttribute("alt" , "")
+                    var div_1 = document.createElement("div")
+                    a_.appendChild(div_1)
+                    div_1.setAttribute("class", "program-glimpse__content")
+                    var div_2 = document.createElement("div")
+                    div_1.appendChild(div_2)
+                    div_2.setAttribute("class", "program-glimpse__wrapper")
+                    var p_ = document.createElement("p")
+                    div_2.appendChild(p_)
+                    p_.setAttribute("class", "program-glimpse__title")
+                    p_.innerHTML=programs['program_title'];
+                    var p_1 = document.createElement("p")
+                    div_2.appendChild(p_1)
+                    p_1.innerHTML=programs['program_description'];
+
+                   return a_
+                 }
+
+
+
+              function get_program()
+            {
+                try{
+                    $.post('{% url "education:get_program" %}',
+                      {
+                      },
+                      function(data){
+                        var program_elm = document.getElementById("program_")
+                        var more_program_btn = document.getElementById("more_program_btn")
+                        for (k in data)
+                        {
+                            programs_elm = make_program_template(data[k])
+                            //alert(programs_elm.outerHTML)
+                            program_elm.insertBefore(programs_elm, more_program_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_program()
+
+          function make_subject_template(subjects)
+                 {
+                    var a_ = document.createElement("a")
+                    a_.setAttribute("class", "category-glimpse")
+                    a_.setAttribute("href", "/en/categories/subject/science/chemistry/")
+                    var div_ = document.createElement("div")
+                    a_.appendChild(div_)
+                    div_.setAttribute("class", "category-glimpse__body")
+                    div_1 = document.createElement("div")
+                    div_.appendChild(div_1)
+                    div_1.setAttribute("class", "category-glimpse__logo")
+                    img_ = document.createElement("img")
+                    div_1.appendChild(img_)
+                    img_.setAttribute("src", subjects['image_url'] )
+                    img_.setAttribute("srcset", subjects['image_url'] + " 200w")
+                    img_.setAttribute("sizes", "200px")
+                    img_.setAttribute("alt" , "")
+                    var h3_ = document.createElement("h3")
+                    div_.appendChild(h3_)
+                    h3_.setAttribute("class", "category-glimpse__title")
+                    h3_.innerHTML= subjects['subject_name'];
+                    //alert(a_.outerHTML)
+
+                   return a_
+                 }
+
+
+
+              function get_subject()
+            {
+                try{
+                    $.post('{% url "education:get_subject" %}',
+                      {
+                      },
+                      function(data){
+                        var subject_elm = document.getElementById("subject_")
+                        var more_subject_btn = document.getElementById("more_subject_btn")
+                        for (k in data)
+                        {
+                            subjects_elm = make_subject_template(data[k])
+                            //alert(subjects_elm.outerHTML)
+                            subject_elm.insertBefore(subjects_elm, more_subject_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_subject()
+
+          function make_person_template(persons)
+          {
+                var div_ = document.createElement("div")
+                div_.setAttribute("class", "person-glimpse")
+                var a_ = document.createElement("a")
+                div_.appendChild(a_)
+                a_.setAttribute("class", "person-glimpse__media")
+                a_.setAttribute("href", "/en/persons/dr-diane-baker/")
+                a_.setAttribute("tabindex", "-1")
+                a_.setAttribute("aria-hidden", "true")
+                var img_ = document.createElement("img")
+                a_.appendChild(img_)
+                img_.setAttribute("src", persons['image_url'])
+                img_.setAttribute("srcset", persons['image_url'] + " 200w")
+                var div_1 = document.createElement("div")
+                div_.appendChild(div_1)
+                div_1.setAttribute("class", "person-glimpse__content")
+                var div_2 = document.createElement("div")
+                div_1.appendChild(div_2)
+                div_2.setAttribute("class", "person-glimpse__wrapper")
+                var a_1 = document.createElement("a")
+                div_2.appendChild(a_1)
+                a_1.setAttribute("href", "/en/persons/dr-diane-baker/")
+                var h3_ = document.createElement("h3")
+                a_1.appendChild(h3_)
+                h3_.setAttribute("class", "person-glimpse__title")
+                h3_.innerHTML=persons['persons_name'];
+                var div_3 = document.createElement("div")
+                div_2.appendChild(div_3)
+                div_3.setAttribute("class", "person-glimpse__categories")
+                var div_4 = document.createElement("div")
+                div_3.appendChild(div_4)
+                div_4.setAttribute("class", "category-tag-list category-tag-list--primary")
+                var a_2 = document.createElement("a")
+                div_4.appendChild(a_2)
+                a_2.setAttribute("class", "category-tag")
+                a_2.setAttribute("href", "/en/categories/subject/computer-science/digital-and-technology/")
+                var span_ = document.createElement("span")
+                a_2.appendChild(span_)
+                span_.setAttribute("class", "category-tag__title")
+                span_.innerHTML= persons['persons_duty'];
+                var div_5 = document.createElement("div")
+                div_2.appendChild(div_5)
+                div_5.setAttribute("class", "person-glimpse__bio")
+                div_5.innerHTML=persons['persons_description'];
+               //alert(div_.outerHTML)
+                return div_
+          }
+
+           function get_person()
+            {
+                try{
+                    $.post('{% url "education:get_person" %}',
+                      {
+                      },
+                      function(data){
+                        var person_elm = document.getElementById("person_")
+                        var more_person_btn = document.getElementById("more_person_btn")
+                        for (k in data)
+                        {
+                            persons_elm = make_person_template(data[k])
+                            //alert(persons_elm.outerHTML)
+                            person_elm.insertBefore(persons_elm, more_person_btn)
+                        }
+                      });
+                  } catch(er){alert(er)}
+            }
+
+            get_person()
+
+{% endblock %}
