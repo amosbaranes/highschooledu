@@ -130,6 +130,7 @@ LOCAL_APPS = [
     'highschooledu.apps.partners',
     'highschooledu.apps.education',
     'highschooledu.apps.checkcashingchicago',
+    'highschooledu.apps.portfolio',
 
     'highschooledu.apps.users',
     'highschooledu.apps.webcompanies',
