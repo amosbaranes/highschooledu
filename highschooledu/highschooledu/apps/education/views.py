@@ -7,7 +7,6 @@ from django.http import JsonResponse
 from .models import Phrase, AdditionalTopic, Course
 
 
-
 def institution(request, model=''):
     try:
         wsc = WebSiteCompany(request)
@@ -31,8 +30,8 @@ def institution(request, model=''):
 
 def home(request):
     institution_ = institution(request)
-    phrases_ = Phrase.objects.all()
-    topics_ = AdditionalTopic.objects.all()
+    phrases_ = institution(request, 'phrases')
+    topics_ = institution(request, 'topics')
     return render(request, 'education/home.html', {'institution_obj': institution_,
                                                    'phrases': phrases_,
                                                    'topics': topics_

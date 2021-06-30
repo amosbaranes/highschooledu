@@ -3,11 +3,12 @@
 
 {% block title %}
 <title>{{ company_obj.company_name }}</title>
-{% endblock%}
+{% endblock %}
 
 
-{% block body_content %}
-        <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
+
+{% block main_page %}
+ <div class="hero-intro" style="background-image: url('{{ institution_obj.institution_image.url }}');">
             <div class="hero-intro__inner">
                 <div class="hero-intro__body">
                     <div class="hero-intro__content">
@@ -38,107 +39,187 @@
                 </div>
             </div>
         </div>
-        <section class="section ">
-            <div class="section__row">
-                <h2 class="section__title">Popular courses</h2>
-                <div id="courses_" class="section__items">
+{% endblock%}
 
 
+{% block nav_bar %}
+<nav class="topbar topbar--over" id="main-menu">
+            <div class="topbar__container">
+                <div class="topbar__brand">
+                    <button class="topbar__hamburger" data-target="main-menu" aria-label="menu" aria-expanded="false">&#8801;</button>
+                    <a href="/" style="margin-bottom:-40px ">
+                        <img src="{{ institution_obj.logo_image.url }}" width="72px" height="100px" alt="">
+                    </a>
+                </div>
+                <div class="topbar__menu">
+                    <ul class="topbar__list">
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/news/">News</a></li>
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/courses/">Courses</a></li>
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/categories/">Categories</a></li>
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/organizations/">Organizations</a></li>
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/persons/">Persons</a></li>
+                        <li class="topbar__item topbar__item--sibling"><a href="/en/programs/">Programs</a></li>
+                    </ul>
+                </div>
 
-                    <div id="more_courses_btn" class="button-caesura">
-                        <a href="/en/courses/">More courses</a>
+                <div class="topbar__menu topbar__menu--aside">
+                    <ul class="topbar__list topbar__list--controls">
+
+                        <li class="topbar__item topbar__item--login richie-react richie-react--user-login" data-props='{"profileUrls": {&quot;dashboard&quot;: {&quot;label&quot;: &quot;Dashboard&quot;, &quot;action&quot;: &quot;https://edx.richie.education/dashboard&quot;}, &quot;profile&quot;: {&quot;label&quot;: &quot;Profile&quot;, &quot;action&quot;: &quot;https://edx.richie.education/u/(username)&quot;}, &quot;account&quot;: {&quot;label&quot;: &quot;Account&quot;, &quot;action&quot;: &quot;https://edx.richie.education/account/settings&quot;}}}'>
+                            <div class="user-login">
+                                <button class="user-login__btn user-login__btn--sign-up">Sign up</button>
+                                <button class="user-login__btn user-login__btn--log-in">
+                                    <svg aria-hidden="true" role="img" class="icon"><use xlink:href="#icon-login"></use></svg>
+                                    Log in
+                                </button>
+                            </div>
+                        </li>
+                        <li class="topbar__item topbar__item--cta"><a href="#">Contact us</a></li>
+                    </ul>
+                    <script data-language-selector type="application/json">
+      {
+        "currentLanguage": "en",
+        "languages": {
+
+          "en": {
+            "code": "en",
+            "name": "English",
+            "url": "/en/"
+
+          },
+
+
+          "fr": {
+            "code": "fr",
+            "name": "French",
+            "url": "/fr/"
+
+          }
+
+
+        }
+      }
+      </script>
+                    <div class="richie-react richie-react--language-selector" data-props-source="[data-language-selector]">
+                        <div class="selector">
+                            <label id="downshift-0-label" for="downshift-0-toggle-button" class="offscreen">Select a language:</label>
+                            <button id="downshift-0-toggle-button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="downshift-0-label downshift-0-toggle-button" class="selector__button">English
+                                <svg role="img" class="selector__button__icon" aria-hidden="true">
+                                  <use xlink:href="#icon-chevron-down"></use>
+                                </svg>
+                            </button>
+                            <ul id="downshift-0-menu" role="listbox" aria-labelledby="downshift-0-label" tabindex="-1" class="selector__list selector__list--is-closed">
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <h2 class="section__title">Last news</h2>
-                <div id="news_" class="section__items">
+        </nav>
+{% endblock %}
+
+{% block body_content %}
+            <section class="section ">
+                <div class="section__row">
+                    <h2 class="section__title">Popular courses</h2>
+                    <div id="courses_" class="section__items">
 
 
 
-                    <div id="more_news_btn" class="button-caesura">
-                        <a href="/en/news/">More news</a>
+                        <div id="more_courses_btn" class="button-caesura">
+                            <a href="/en/courses/">More courses</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <h2 class="section__title">Programs</h2>
-                <div id="program_" class="section__items">
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <h2 class="section__title">Last news</h2>
+                    <div id="news_" class="section__items">
 
-                    <div id="more_program_btn" class="button-caesura">
-                        <a href="/en/programs/">More programs</a>
+
+
+                        <div id="more_news_btn" class="button-caesura">
+                            <a href="/en/news/">More news</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <h2 class="section__title">Subjects</h2>
-                <div id="subject_" class="section__items">
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <h2 class="section__title">Programs</h2>
+                    <div id="program_" class="section__items">
 
-                    <div id="more_subject_btn" class="button-caesura">
-                        <a href="/en/categories/">More subjects</a>
+                        <div id="more_program_btn" class="button-caesura">
+                            <a href="/en/programs/">More programs</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <h2 class="section__title">Persons</h2>
-                <div id="person_" class="section__items">
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <h2 class="section__title">Subjects</h2>
+                    <div id="subject_" class="section__items">
 
-
-                    <div id="more_person_btn" class="button-caesura">
-                        <a href="/en/persons/">More persons</a>
+                        <div id="more_subject_btn" class="button-caesura">
+                            <a href="/en/categories/">More subjects</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <h2 class="section__title">Persons</h2>
+                    <div id="person_" class="section__items">
 
 
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <div class="section__items">
-                    {% for phrase in phrases %}
-                    <div class="glimpse-quote">
-                        <div class="glimpse-quote__wrapper">
-                            <div class="glimpse-quote__media">
-                                <img src="{{ phrase.image.url }}"
-                                     srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
+                        <div id="more_person_btn" class="button-caesura">
+                            <a href="/en/persons/">More persons</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <div class="section__items">
+                        {% for phrase in phrases %}
+                        <div class="glimpse-quote">
+                            <div class="glimpse-quote__wrapper">
+                                <div class="glimpse-quote__media">
+                                    <img src="{{ phrase.image.url }}"
+                                         srcset="{{ phrase.image.url }} 200w"  sizes="200px" alt="">
+                                </div>
+                            </div>
+                            <div class="glimpse-quote__content">
+                                <svg role="img"><use href="#icon-quote" /></svg>
+                                <p>{{phrase.persons_phrase}}</p>
                             </div>
                         </div>
-                        <div class="glimpse-quote__content">
-                            <svg role="img"><use href="#icon-quote" /></svg>
-                            <p>{{phrase.persons_phrase}}</p>
-                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-            </div>
-        </section>
-        <section class="section ">
-            <div class="section__row">
-                <div class="section__items">
-                     {% for topic in topics %}
-                 <div class="glimpse-card_square">
-                        <div class="glimpse-card_square__media">
-                            <img src="{{topic.image.url }}"
-                             srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
+            </section>
+            <section class="section ">
+                <div class="section__row">
+                    <div class="section__items">
+                         {% for topic in topics %}
+                     <div class="glimpse-card_square">
+                            <div class="glimpse-card_square__media">
+                                <img src="{{topic.image.url }}"
+                                 srcset="{{topic.image.url }} 300w, 600w" sizes="300px" alt="">
+                            </div>
+                            <div class="glimpse-card_square__wrapper">
+                                <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
+                            </div>
                         </div>
-                        <div class="glimpse-card_square__wrapper">
-                            <h3 class="glimpse-card_square__title">{{topic.topic_description}}</h3>
-                        </div>
+
+                        {% endfor %}
                     </div>
-
-                    {% endfor %}
                 </div>
-            </div>
 
-        </section>
+            </section>
 {% endblock %}
 
   {% block js %}
