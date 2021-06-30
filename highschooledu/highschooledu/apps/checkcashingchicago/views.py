@@ -10,32 +10,12 @@ from django.urls import reverse
 from django.shortcuts import redirect
 
 
-def check_cashing(request, model=''):
-    try:
-        wsc = WebSiteCompany(request)
-        if wsc.is_registered_domain():
-            web_company_id = wsc.web_site_company['web_company_id']
-            web_company = WebCompanies.objects.get(id=web_company_id)
-        else:
-            web_company = WebCompanies.objects.get(id=8)
-    except Exception as ex:
-        print(ex)
-
-    if model != '':
-        s = "objs = web_company.target."+model+".filter(is_active=True).all()"
-        dic_ = {'web_company': web_company}
-        exec(s, dic_)
-        objs = dic_['objs']
-    else:
-        objs = web_company.target
-    return objs
-
-
 def home(request):
-    company_obj = check_cashing(request)
-    locations = check_cashing(request, 'locations')
-    currencies = Currency.objects.all()
-    partners = Partner.objects.all()
+    wsc = WebSiteCompany(request, web_company_id=8)
+    company_obj = wsc.site_company()
+    locations = wsc.site_company('locations')
+    currencies = wsc.site_company('currencies')
+    partners = wsc.site_company('partners')
     return render(request, 'checkcashingchicago/home.html', {'company_obj': company_obj,
                                                              'currencies': currencies,
                                                              'locations': locations,

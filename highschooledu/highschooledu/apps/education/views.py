@@ -7,48 +7,30 @@ from django.http import JsonResponse
 from .models import Phrase, AdditionalTopic, Course
 
 
-def institution(request, model=''):
-    try:
-        wsc = WebSiteCompany(request)
-        if wsc.is_registered_domain():
-            web_company_id = wsc.web_site_company['web_company_id']
-            web_company = WebCompanies.objects.get(id=web_company_id)
-        else:
-            web_company = WebCompanies.objects.get(id=7)
-    except Exception as ex:
-        print(ex)
-
-    if model != '':
-        s = "objs = web_company.target."+model+".filter(is_active=True).all()"
-        dic_ = {'web_company': web_company}
-        exec(s, dic_)
-        objs = dic_['objs']
-    else:
-        objs = web_company.target
-    return objs
-
-
 def home(request):
-    institution_ = institution(request)
-    phrases_ = institution(request, 'phrases')
-    topics_ = institution(request, 'topics')
-    return render(request, 'education/home.html', {'institution_obj': institution_,
+    wsc = WebSiteCompany(request, web_company_id=7)
+    company_obj = wsc.site_company()
+    phrases_ = wsc.site_company('phrases')
+    topics_ = wsc.site_company('topics')
+    return render(request, 'education/home.html', {'institution_obj': company_obj,
                                                    'phrases': phrases_,
                                                    'topics': topics_
                                                    })
 
 
 def course_description(request, pk):
+    wsc = WebSiteCompany(request, web_company_id=7)
+    company_obj = wsc.site_company()
     course = Course.objects.get(id=pk)
-    institution_ = institution(request)
     return render(request, 'education/course_description.html',
                   {'course': course,
-                   'institution_obj': institution_,
+                   'institution_obj': company_obj,
                    })
 
 
 def get_courses(request):
-    courses = institution(request, 'courses')
+    wsc = WebSiteCompany(request, web_company_id=7)
+    courses = wsc.site_company('courses')
     rr = {}
     for course in courses:
         rr[str(course.id)] = {
@@ -64,7 +46,8 @@ def get_courses(request):
 
 
 def get_news(request):
-    news = institution(request, 'news')
+    wsc = WebSiteCompany(request, web_company_id=7)
+    news = wsc.site_company('news')
     rr = {}
     for new in news:
         if new.is_active:
@@ -82,9 +65,8 @@ def get_news(request):
 
 
 def get_program(request):
-
-    programs = institution(request, 'programs')
-
+    wsc = WebSiteCompany(request, web_company_id=7)
+    programs = wsc.site_company('programs')
     rr = {}
     for program in programs:
         print('-' * 50)
@@ -99,9 +81,8 @@ def get_program(request):
 
 
 def get_subject(request):
-
-    subjects = institution(request, 'subjects')
-
+    wsc = WebSiteCompany(request, web_company_id=7)
+    subjects = wsc.site_company('subjects')
     rr = {}
     for subject in subjects:
         print('-' * 50)
@@ -115,9 +96,8 @@ def get_subject(request):
 
 
 def get_person(request):
-
-    persons = institution(request, 'persons')
-
+    wsc = WebSiteCompany(request, web_company_id=7)
+    persons = wsc.site_company('persons')
     rr = {}
     for person in persons:
         print('-' * 50)
